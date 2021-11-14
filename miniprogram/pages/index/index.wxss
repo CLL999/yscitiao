@@ -1,4 +1,11 @@
-/* .inputDetail {
-  border:  red solid;
-  margin: 30rpx 30rpx;
-} */
+.tips {
+  display: flex;
+  justify-content: center;
+}
+
+.head {
+  color: brown;
+  margin: 30rpx 88rpx;
+  font-size: small;
+  font-weight:400;
+}

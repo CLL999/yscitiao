@@ -29,8 +29,8 @@ Component({
     // GobletArray: ["ElementDMGBonus","ElementalMastery","HP%","ATK%","DEF%"],
     // CircletArray: ["CritDMG","CritRate","Healing Bonus","ElementalMastery","HP%","ATK%","DEF%"],
     SandsArray: ["攻击力%","生命值%","防御力%","元素精通","充能效率%"],
-    GobletArray: ["属性伤害","元素精通","生命值%","攻击力%","防御力%"],
-    CircletArray: ["暴击伤害","暴击率","治疗加成","元素精通","生命值%","攻击力%","防御力%"],
+    GobletArray: ["属性伤害%","元素精通","生命值%","攻击力%","防御力%"],
+    CircletArray: ["暴击伤害%","暴击率%","治疗加成","元素精通","生命值%","攻击力%","防御力%"],
   },
 
   /**

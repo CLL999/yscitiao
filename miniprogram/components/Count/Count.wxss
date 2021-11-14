@@ -7,3 +7,31 @@
   display: flex;
   justify-content: center;
 }
+
+.item {
+  display: flex;
+  justify-content: center;
+  color: darkkhaki;
+}
+
+.checkbox {
+  /* border-radius: 20rpx; */
+  /* border: 30rpx solid cadetblue; */
+  margin: 30rpx;
+}
+
+.labelCheckbox {
+  display: inline-block;
+}
+
+.labelItem {
+  display: flex;
+}
+
+.Final {
+  color: coral;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  
+}

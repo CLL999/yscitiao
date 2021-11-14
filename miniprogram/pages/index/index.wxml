@@ -1,6 +1,9 @@
-<!-- <view >基于@NGA-pressure_pressure制作</view> -->
+<view class="tips">基于@NGA-pressure_pressure的帖子制作</view>
 
+<view class="head">点开人物→属性→详细信息，填入角色的生命值、攻击力和防御力白字，并选择圣遗物属性</view>
 <CharacterData bindinput="CharacterData" />
+
+<view class="head">点开人物→圣遗物→圣遗物详情，填入对应的数值</view>
 
 <DataInDetail bindinput="inputDetail" />
 
