@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "DataInDetail": "../../components/DataInDetail/DataInDetail"
+
+  }
+}

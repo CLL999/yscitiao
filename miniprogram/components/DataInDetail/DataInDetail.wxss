@@ -1,0 +1,6 @@
+/* components/Step2/Step2.wxss */
+
+.inputDetail {
+  border:  red solid;
+  margin: 30rpx 30rpx;
+}

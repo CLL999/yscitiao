@@ -1,0 +1,15 @@
+<!--components/Step2/Step2.wxml-->
+
+<input class="inputDetail" placeholder="生命值" type="number" bindinput="inputHP" maxlength="6" />
+
+<input class="inputDetail" placeholder="攻击力" type="number" bindinput="inputATK" maxlength="6" />
+
+<input class="inputDetail" placeholder="防御力" type="number" bindinput="inputDEF" maxlength="6" />
+
+<input class="inputDetail" placeholder="元素精通" type="number" bindinput="inputElementalMastery" maxlength="6" />
+
+<input class="inputDetail" placeholder="暴击率/%" type="number" bindinput="inputCritRate" maxlength="6" />
+
+<input class="inputDetail" placeholder="暴击伤害/%" type="number" bindinput="inputCritDMG" maxlength="6" />
+
+<input class="inputDetail" placeholder="充能效率/%" type="number" bindinput="inputEnergyRecharge" maxlength="6" />
