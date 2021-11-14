@@ -5,6 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    CharacterData: {
+      HPDefault: 0,
+      ATKDefault: 0,
+      DEFDefault: 0,
+      Sands: "",
+      Goblet: "",
+      Circlet: ""
+    },
     DataInDetail: {
       HP: 0, // 生命
       ATK: 0, // 攻击
@@ -20,6 +28,12 @@ Page({
   inputDetail: function (e) {
     this.setData({
       DataInDetail: e.detail.DataInDetail
+    })
+  },
+
+  CharacterData: function (e) {
+    this.setData({
+      CharacterData: e.detail.CharacterData
     })
   },
 

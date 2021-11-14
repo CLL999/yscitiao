@@ -1,0 +1,38 @@
+<!--components/CharacterData/CharacterData.wxml-->
+<!-- <text>components/CharacterData/CharacterData.wxml</text> -->
+
+<input class="inputDetail" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" />
+
+<input class="inputDetail" placeholder="攻击力白字" type="number"
+bindinput="inputATK" maxlength="6" />
+
+<input class="inputDetail" placeholder="防御力白字" type="number" 
+bindinput="inputDEF" maxlength="6" />
+
+<view class="container">
+  <view class="tips">-时之沙属性-</view>
+  <picker bindchange="bindSandsPickerChange" value="{{SandsIndex}}" range="{{SandsArray}}">
+    <view class="picker">
+      <text wx:if="{{SandsIndex}}">当前选择：{{SandsArray[SandsIndex]}}</text>
+      <text wx:else>点击选择</text>
+    </view>
+  </picker>
+</view>
+<view class="container">
+  <view class="tips">-空之杯属性-</view>
+  <picker bindchange="bindGobletPickerChange" value="{{GobletIndex}}" range="{{GobletArray}}">
+    <view class="picker">
+      <text wx:if="{{GobletIndex}}">当前选择：{{GobletArray[GobletIndex]}}</text>
+      <text wx:else>点击选择</text>
+    </view>
+  </picker>
+</view>
+<view class="container">
+  <view class="tips">-理之冠属性-</view>
+  <picker bindchange="bindCircletPickerChange" value="{{CircletIndex}}" range="{{CircletArray}}">
+    <view class="picker">
+      <text wx:if="{{CircletIndex}}">当前选择：{{CircletArray[CircletIndex]}}</text>
+      <text wx:else>点击选择</text>
+    </view>
+  </picker>
+</view>

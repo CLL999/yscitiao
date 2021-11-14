@@ -1,3 +1,23 @@
+<!-- <view >基于@NGA-pressure_pressure制作</view> -->
 
+<CharacterData bindinput="CharacterData" />
 
-<DataInDetail bindinput="inputDetail"></DataInDetail>
+<DataInDetail bindinput="inputDetail" />
+
+<!-- <Count 
+  HPDefault="{{CharacterData.HPDefault}}"
+  ATKDefault="{{CharacterData.ATKDefault}}"
+  DEFDefault="{{CharacterData.DEFDefault}}"
+  Sands="{{CharacterData.Sands}}"
+  Goblet="{{CharacterData.Goblet}}"
+  Circlet="{{CharacterData.Circlet}}"
+
+  HP="{{DataInDetail.HP}}"
+  ATK="{{DataInDetail.ATK}}"
+  DEF="{{DataInDetail.DEF}}"
+  CritRate="{{DataInDetail.CritRate}}"
+  CritDMG="{{DataInDetail.CritDMG}}"
+  ElementalMastery="{{DataInDetail.ElementalMastery}}"
+  EnergyRecharge="{{DataInDetail.EnergyRecharge}}"
+
+/> -->
