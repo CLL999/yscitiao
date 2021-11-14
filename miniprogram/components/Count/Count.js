@@ -19,13 +19,14 @@ Component({
     ElementalMastery: Number,
     EnergyRecharge: Number
   },
-  // observers: {
-  //   "**": function () {
-  //     this.setData({
-  //       FinalHP: (this.data.HP - 4780) / (this.data.HPDefault-0.466*((this.data.Sands == "生命值%" ? 1:0) + (this.data.Goblet == "生命值%"? 1: 0) + (this.data.Circlet == "生命值%"? 1: 0))) / this.data.ForEachHP,
-  //     })
-  //   }    
-  // },
+  observers: {
+    "HP": function () {
+      this.setData({
+        FinalHP: (this.data.HP - 4780) / (this.data.HPDefault - 0.466*((this.data.Sands === "生命值%" ? 1: 0) + (this.data.Goblet === "生命值%" ? 1: 0) + (this.data.Circlet === "生命值%" ? 1: 0))) / this.data.ForEachHP,
+      })
+      console.log(this.data.FinalHP);
+    }    
+  },
   /**
    * 组件的初始数据
    */

@@ -4,7 +4,7 @@
 
 <DataInDetail bindinput="inputDetail" />
 
-<!-- <Count 
+<Count 
   HPDefault="{{CharacterData.HPDefault}}"
   ATKDefault="{{CharacterData.ATKDefault}}"
   DEFDefault="{{CharacterData.DEFDefault}}"
@@ -20,4 +20,4 @@
   ElementalMastery="{{DataInDetail.ElementalMastery}}"
   EnergyRecharge="{{DataInDetail.EnergyRecharge}}"
 
-/> -->
+/>

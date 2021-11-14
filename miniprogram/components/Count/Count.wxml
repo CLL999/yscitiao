@@ -1,7 +1,7 @@
 <view class="tips">--总结--</view>
 
-<!-- <view class="container">
+<view class="container">
   <view class="kind">
-    <view class="item">生命:{{(HP - 4780) / (HPDefault-0.466*((Sands == "生命值%" ? 1:0) + (Goblet == "生命值%"? 1: 0) + (Circlet == "生命值%"? 1: 0))) / ForEachHP}}</view>
+    <view class="item">生命:{{FinalHP}}</view>
   </view>
-</view> -->
+</view>
