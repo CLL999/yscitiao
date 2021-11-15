@@ -13,7 +13,23 @@ App({
         traceUser: true,
       });
     }
-
-    this.globalData = {};
+  wx.getStorage({key: "CharacterData"}).then(
+    res => {
+    //  console.log(res);
+      var CharacterData = res.data;
+      this.globalData = {CharacterData: res.data};
+      console.log(this.globalData.CharacterData);
+    }
+  )
+  wx.getStorage({key: "DataInDetail"}).then(
+    res => {
+      this.globalData = { DataInDetail: res.data};
+      console.log(this.globalData.DataInDetail);
+    }
+  )
+    this.globalData = {
+      CharacterData: Array,
+      DataInDetail: Array
+    };
   }
 });

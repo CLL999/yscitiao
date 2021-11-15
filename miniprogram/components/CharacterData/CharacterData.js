@@ -18,6 +18,10 @@ Component({
       this.triggerEvent("input", {
         CharacterData
       });
+      wx.setStorage({
+        key: "CharacterData",
+        data: CharacterData,
+      })
     }
   },
 
@@ -48,19 +52,32 @@ Component({
     },
 
     inputATK: function (e) {
+      if (e.detail.value)
       this.setData({
         ATKDefault: e.detail.value
       })
     },
     inputHP: function (e) {
+      if (e.detail.value)
       this.setData({
         HPDefault: e.detail.value
       })
     },
     inputDEF: function (e) {
+      if (e.detail.value)
       this.setData({
         DEFDefault: e.detail.value
       })
     },
-  }
+  },
+
+  async attached() {
+    console.log("我是挂载");
+    // var CharacterData = wx.getStorage("CharacterData");
+    // if (!CharacterData) return;
+    // else this.setData({
+    //   HPDefault: CharacterData.HPDefault,
+    //   ATKDefault: CharacterData.
+    // })
+  },
 })

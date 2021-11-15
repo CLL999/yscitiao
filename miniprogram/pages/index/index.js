@@ -29,12 +29,20 @@ Page({
     this.setData({
       DataInDetail: e.detail.DataInDetail
     })
+    // wx.setStorage({
+    //   key: "DataInDetail",
+    //   data: this.data.DataInDetail,
+    // })
   },
 
   CharacterData: function (e) {
     this.setData({
       CharacterData: e.detail.CharacterData
     })
+    // wx.setStorage({
+    //   key: "CharacterData",
+    //   data: this.data.CharacterData,
+    // })
   },
 
 

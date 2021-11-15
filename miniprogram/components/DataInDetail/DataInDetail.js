@@ -19,6 +19,10 @@ Component({
       this.triggerEvent("input", {
         DataInDetail
       });
+      wx.setStorage({
+        key: "DataInDetail",
+        data: DataInDetail,
+      })
     }
   },
   /**
