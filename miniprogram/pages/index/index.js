@@ -6,16 +6,16 @@ Page({
    */
   data: {
     CharacterData: {
-      HPDefault: 0,
-      ATKDefault: 0,
-      DEFDefault: 0,
+      HPDefault:  100000000,
+      ATKDefault: 100000000,
+      DEFDefault: 100000000,
       Sands: "",
       Goblet: "",
       Circlet: ""
     },
     DataInDetail: {
-      HP: 0, // 生命
-      ATK: 0, // 攻击
+      HP: 4780, // 生命
+      ATK: 311, // 攻击
       DEF: 0, // 防御
       CritRate: 0, //暴击
       CritDMG: 0, //爆伤
