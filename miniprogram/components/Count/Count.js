@@ -21,16 +21,19 @@ Component({
   },
   observers: {
     "HP,HPDefault": function () {
+      // if (!this.data.HPDefault) return;
       this.setData({
         FinalHP: ((this.data.HP - 4780) / (this.data.HPDefault - 0.466 * ((this.data.Sands === "生命值%" ? 1 : 0) + (this.data.Goblet === "生命值%" ? 1 : 0) + (this.data.Circlet === "生命值%" ? 1 : 0))) / this.data.ForEachHP).toFixed(2),
       })
     },
     "ATK,ATKDefault": function () {
+      if (!this.data.ATKDefault) return;
       this.setData({
         FinalATK: ((((this.data.ATK - 311) / (this.data.ATKDefault)) - 0.466 * ((this.data.Sands === "攻击力%" ? 1 : 0) + (this.data.Goblet === "攻击力%" ? 1 : 0) + (this.data.Circlet === "攻击力%" ? 1 : 0))) / this.data.ForEachATK).toFixed(2),
       })
     },
     "DEF,DEFDefault": function () {
+      if (!this.data.DEFDefault) return;
       this.setData({
         FinalDEF: (((this.data.DEF / this.data.DEFDefault) - 0.583 * ((this.data.Sands === "防御力%" ? 1 : 0) + (this.data.Circlet === "防御力%" ? 1 : 0) + (this.data.Goblet === "防御力%" ? 1 : 0))) / this.data.ForEachDEF).toFixed(2),
       })

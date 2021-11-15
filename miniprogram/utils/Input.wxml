@@ -1,0 +1,14 @@
+<template name="Input">
+  <block wx:if="{{inputHP}}">
+    <input wx:if="{{HPDefault === 100000000 || (!HPDefault)}}" class="inputDetail" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" />
+    <input wx:else class="inputDetail" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" value="{{HPDefault}}" />
+  </block>
+  <block wx:if="{{inputATK}}">
+    <input wx:if="{{ATKDefault === 100000000 || ATKDefault === 0}}" class="inputDetail" placeholder="攻击力白字" type="number" bindinput="inputATK" maxlength="6" />
+    <input wx:else class="inputDetail" placeholder="攻击力白字" type="number" bindinput="inputATK" maxlength="6" value="{{ATKDefault}}" />
+  </block>
+  <block wx:if="{{inputDEF}}">
+    <input wx:if="{{DEFDefault === 100000000 || DEFDefault === 0}}" class="inputDetail" placeholder="防御力白字" type="number" bindinput="inputDEF" maxlength="6" />
+    <input wx:else class="inputDetail" placeholder="防御力白字" type="number" bindinput="inputDEF" maxlength="6" value="{{DEFDefault}}" />
+  </block>
+</template>

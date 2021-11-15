@@ -6,9 +6,9 @@ Page({
    */
   data: {
     CharacterData: {
-      HPDefault:  100000000,
-      ATKDefault: 100000000,
-      DEFDefault: 100000000,
+      HPDefault:  0,
+      ATKDefault: 0,
+      DEFDefault: 0,
       Sands: "",
       Goblet: "",
       Circlet: ""

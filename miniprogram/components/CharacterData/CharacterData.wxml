@@ -1,13 +1,11 @@
 <!--components/CharacterData/CharacterData.wxml-->
 <!-- <text>components/CharacterData/CharacterData.wxml</text> -->
 
-<input class="inputDetail" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" />
+<input class="inputDetail" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" value="{{HPDefault?HPDefault: '' }}" />
 
-<input class="inputDetail" placeholder="攻击力白字" type="number"
-bindinput="inputATK" maxlength="6" />
+<input class="inputDetail" placeholder="攻击力白字" type="number" bindinput="inputATK" maxlength="6" value="{{ATKDefault?ATKDefault: '' }}"/>
 
-<input class="inputDetail" placeholder="防御力白字" type="number" 
-bindinput="inputDEF" maxlength="6" />
+<input class="inputDetail" placeholder="防御力白字" type="number" bindinput="inputDEF" maxlength="6" value="{{DEFDefault?DEFDefault: '' }}"/>
 
 <view class="container">
   <view class="tips">-时之沙属性-</view>
