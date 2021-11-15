@@ -1,3 +1,5 @@
+var app = getApp();
+
 // components/DataInDetail/DataInDetail.js
 Component({
   /**
@@ -9,20 +11,19 @@ Component({
     DEF: Number, // 防御
     CritRate: Number, //暴击
     CritDMG: Number, //爆伤
-    //    ElementDMGBonus: 0,
     ElementalMastery: Number, // 精通
     EnergyRecharge: Number // 充能
   },
   observers: {
     "**": function () {
       var DataInDetail = this.data;
-      this.triggerEvent("input", {
-        DataInDetail
-      });
       wx.setStorage({
         key: "DataInDetail",
         data: DataInDetail,
-      })
+      });
+      this.triggerEvent("input", {
+        DataInDetail
+      });
     }
   },
   /**
@@ -82,4 +83,10 @@ Component({
       })
     },
   },
+
+  async attached() {
+    let {ATK, CritDMG, CritRate, DEF, ElementalMastery, EnergyRecharge, HP} = app.globalData.DataInDetail;
+    this.setData({ATK, CritDMG, CritRate, DEF, ElementalMastery, EnergyRecharge, HP});
+    console.log("data!!",this.data);
+  }
 })

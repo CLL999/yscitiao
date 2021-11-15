@@ -76,8 +76,7 @@ Component({
   },
 
   async attached() {
-    console.log("我是挂载");
-    console.log(app.globalData.CharacterData);
+    // console.log(app.globalData.CharacterData);
     this.setData(
       {
         CircletIndex: app.globalData.CharacterData.CircletIndex,
@@ -93,6 +92,5 @@ Component({
         DEFDefault: app.globalData.CharacterData.DEFDefault
       }
     );
-    console.log(this.data);
   },
 })
