@@ -1,3 +1,5 @@
+var app = getApp();
+
 // components/Count/Count.js
 Component({
   /**
@@ -57,7 +59,7 @@ Component({
       this.setData({
         FinalEnergyRecharge: ((this.data.EnergyRecharge - 51.8 * (this.data.Sands === "充能效率%" ? 1 : 0)) / this.data.ForEachEnergyRecharge).toFixed(2),
       })
-    }
+    },
   },
   /**
    * 组件的初始数据
@@ -142,6 +144,28 @@ Component({
       });
       console.log("SUM ", this.data.SUM);
       console.log(this.data.VisualItem);
+    }
+  },
+
+  async attached() {
+    // let {HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet} = app.globalData.CharacterData;
+
+    // let {HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge} = app.globalData.DataInDetail;
+
+    // this.setData({HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet,HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge});
+
+    // console.log(this.data);
+  },
+
+  pageLifetimes: {
+    show: function() {
+      let {HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet} = app.globalData.CharacterData;
+
+      let {HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge} = app.globalData.DataInDetail;
+  
+      this.setData({HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet,HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge});
+  
+      console.log(this.data);
     }
   }
 })

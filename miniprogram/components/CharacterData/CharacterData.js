@@ -20,7 +20,28 @@ Component({
       wx.setStorage({
         key: "CharacterData",
         data: CharacterData,
-      })
+      });
+      // wx.getStorage({
+      //   key: "CharacterData"
+      // }).then(
+      //   res1 => {
+      //     wx.getStorage({
+      //       key: "DataInDetail"
+      //     }).then(
+      //       res2 => {
+      //         getApp().globalData = {
+      //           CharacterData: res1.data,
+      //           DataInDetail: res2.data
+      //         };
+      //       }
+      //     );
+      //   }
+      // );
+      wx.getStorage({key: "CharacterData"}).then(res => 
+          {getApp().globalData.CharacterData = res.data;
+          
+      console.log("APP",app.globalData.CharacterData);});
+      console.log("data",this.data);
       this.triggerEvent("input", {
         CharacterData
       });

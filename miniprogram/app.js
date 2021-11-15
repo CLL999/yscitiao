@@ -13,18 +13,23 @@ App({
         traceUser: true,
       });
     }
-  wx.getStorage({key: "CharacterData"}).then(
-    res1 => {
-      wx.getStorage({key: "DataInDetail"}).then(
-        res2 => {
-          this.globalData = { 
-            CharacterData: res1.data,
-            DataInDetail: res2.data
-          };
-        }
-      );
-    }
-  );
+    wx.getStorage({
+      key: "CharacterData"
+    }).then(
+      res1 => {
+        wx.getStorage({
+          key: "DataInDetail"
+        }).then(
+          res2 => {
+            this.globalData = {
+              CharacterData: res1.data,
+              DataInDetail: res2.data
+            };
+          }
+        );
+      }
+    );
 
-  }
+  },
+
 });

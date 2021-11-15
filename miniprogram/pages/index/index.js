@@ -5,24 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    CharacterData: {
-      HPDefault:  0,
-      ATKDefault: 0,
-      DEFDefault: 0,
-      Sands: "",
-      Goblet: "",
-      Circlet: ""
-    },
-    DataInDetail: {
-      HP: 4780, // 生命
-      ATK: 311, // 攻击
-      DEF: 0, // 防御
-      CritRate: 0, //暴击
-      CritDMG: 0, //爆伤
-      //    ElementDMGBonus: 0,
-      ElementalMastery: 0, // 精通
-      EnergyRecharge: 0 // 充能
-    }
   },
 
   inputDetail: function (e) {
