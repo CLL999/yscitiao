@@ -24,43 +24,36 @@ Component({
       this.setData({
         FinalHP: ((this.data.HP - 4780) / (this.data.HPDefault - 0.466 * ((this.data.Sands === "生命值%" ? 1 : 0) + (this.data.Goblet === "生命值%" ? 1 : 0) + (this.data.Circlet === "生命值%" ? 1 : 0))) / this.data.ForEachHP).toFixed(2),
       })
-      console.log(this.data.FinalHP);
     },
     "ATK,ATKDefault": function () {
       this.setData({
         FinalATK: ((((this.data.ATK - 311) / (this.data.ATKDefault)) - 0.466 * ((this.data.Sands === "攻击力%" ? 1 : 0) + (this.data.Goblet === "攻击力%" ? 1 : 0) + (this.data.Circlet === "攻击力%" ? 1 : 0))) / this.data.ForEachATK).toFixed(2),
       })
-      console.log(this.data.FinalATK);
     },
     "DEF,DEFDefault": function () {
       this.setData({
         FinalDEF: (((this.data.DEF / this.data.DEFDefault) - 0.583 * ((this.data.Sands === "防御力%" ? 1 : 0) + (this.data.Circlet === "防御力%" ? 1 : 0) + (this.data.Goblet === "防御力%" ? 1 : 0))) / this.data.ForEachDEF).toFixed(2),
       })
-      console.log(this.data.FinalDEF);
     },
     "ElementalMastery": function () {
       this.setData({
         FinalElementalMastery: ((this.data.ElementalMastery - 187 * ((this.data.Sands === "元素精通" ? 1 : 0) + (this.data.Goblet === "元素精通" ? 1 : 0) + (this.data.Circlet === "元素精通" ? 1 : 0))) / this.data.ForEachElementalMastery).toFixed(2),
       })
-      console.log(this.data.FinalElementalMastery);
     },
     "CritRate": function () {
       this.setData({
         FinalCritRate: ((this.data.CritRate - 31.1 * (this.data.Circlet === "暴击率%" ? 1 : 0)) / this.data.ForEachCritRate).toFixed(2),
       })
-      console.log(this.data.FinalCritRate);
     },
     "CritDMG": function () {
       this.setData({
         FinalCritDMG: ((this.data.CritDMG - 62.2 * (this.data.Circlet === "暴击伤害%" ? 1 : 0)) / this.data.ForEachCritDMG).toFixed(2),
       })
-      console.log(this.data.FinalCritDMG);
     },
     "EnergyRecharge": function () {
       this.setData({
         FinalEnergyRecharge: ((this.data.EnergyRecharge - 51.8 * (this.data.Sands === "充能效率%" ? 1 : 0)) / this.data.ForEachEnergyRecharge).toFixed(2),
       })
-      console.log(this.data.FinalEnergyRecharge);
     }
   },
   /**

@@ -1,3 +1,5 @@
+var app = getApp();
+
 // components/CharacterData/CharacterData.js
 Component({
   /**
@@ -15,13 +17,13 @@ Component({
   observers: {
     "**": function () {
       var CharacterData = this.data;
-      this.triggerEvent("input", {
-        CharacterData
-      });
       wx.setStorage({
         key: "CharacterData",
         data: CharacterData,
       })
+      this.triggerEvent("input", {
+        CharacterData
+      });
     }
   },
 
@@ -35,6 +37,9 @@ Component({
     SandsArray: ["攻击力%","生命值%","防御力%","元素精通","充能效率%"],
     GobletArray: ["属性伤害%","元素精通","生命值%","攻击力%","防御力%"],
     CircletArray: ["暴击伤害%","暴击率%","治疗加成","元素精通","生命值%","攻击力%","防御力%"],
+    SandsIndex: "",
+    GobletIndex: "",
+    CircletIndex: ""
   },
 
   /**
@@ -73,11 +78,6 @@ Component({
 
   async attached() {
     console.log("我是挂载");
-    // var CharacterData = wx.getStorage("CharacterData");
-    // if (!CharacterData) return;
-    // else this.setData({
-    //   HPDefault: CharacterData.HPDefault,
-    //   ATKDefault: CharacterData.
-    // })
+    console.log(app.globalData.CharacterData);
   },
 })
