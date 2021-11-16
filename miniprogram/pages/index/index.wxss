@@ -5,7 +5,7 @@
 
 .head {
   color: brown;
-  margin: 30rpx 88rpx;
+  margin: 30rpx 74rpx;
   font-size: small;
   font-weight:400;
 }

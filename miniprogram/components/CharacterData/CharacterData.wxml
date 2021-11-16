@@ -3,20 +3,15 @@
 
 <view class="rowItem">
   <view class="box box1">
-    <input class="test" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" value="{{HPDefault?HPDefault: '' }}" />
+    <input class="inputDetail" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" value="{{HPDefault?HPDefault: '' }}" />
   </view>
-  <view class="box box2"></view>
-  <view class="box box3"></view>
+  <view class="box box2">
+    <input class="inputDetail" placeholder="攻击力白字" type="number" bindinput="inputATK" maxlength="6" value="{{ATKDefault?ATKDefault: '' }}" />
+  </view>
+  <view class="box box3">
+    <input class="inputDetail" placeholder="防御力白字" type="number" bindinput="inputDEF" maxlength="6" value="{{DEFDefault?DEFDefault: '' }}" />
+  </view>
 </view>
-
-
-<!-- <view class="itemInRow"> -->
-<input class="inputDetail" placeholder="生命值白字" type="number" bindinput="inputHP" maxlength="6" value="{{HPDefault?HPDefault: '' }}" />
-
-<input class="inputDetail" placeholder="攻击力白字" type="number" bindinput="inputATK" maxlength="6" value="{{ATKDefault?ATKDefault: '' }}" />
-
-<input class="inputDetail" placeholder="防御力白字" type="number" bindinput="inputDEF" maxlength="6" value="{{DEFDefault?DEFDefault: '' }}" />
-<!-- </view> -->
 
 <view class="row">
   <view class="container">

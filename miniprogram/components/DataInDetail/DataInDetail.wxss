@@ -1,14 +1,17 @@
 /* components/Step2/Step2.wxss */
 
-.inputDetail {
+/* .inputDetail {
   border:  red solid;
   margin: 30rpx 30rpx;
-}
+} */
 
 
 .box {
   width: 224rpx;
   height: 224rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rowItem {
@@ -31,6 +34,8 @@
 .Box {
   width: 168rpx;
   height: 168rpx;
+  display: flex;
+  align-items: center;
 }
 
 .box4 {
@@ -47,4 +52,11 @@
 
 .box7 {
   background: #F9F871;
+}
+
+.inputDetail {
+  padding: 0 3rpx;
+  border-bottom: 1rpx grey solid;
+  width: 166rpx;
+  margin: 0 8rpx;
 }

@@ -1,16 +1,5 @@
 /* components/CharacterData/CharacterData.wxss */
 
-.inputDetail {
-  /* border:  goldenrod solid; */
-  margin: 30rpx 270rpx;
-  display: flex;
-  justify-content: center;
-  background-color: aquamarine ;
-  border-radius: 40rpx;
-  align-items: center;
-  padding: 20rpx;
-}
-
 .tips {
   display: flex;
   justify-content: center;
@@ -29,18 +18,10 @@
   margin: 20rpx 150rpx;
 }
 
-/* .icon {
-  width: 50%;
-  height: 50%;
-} */
-
-.test {
-  /* border: solid red 1rpx; */
-  /* display: flex;
-  justify-content: center; */
+.inputDetail {
   padding: 0 10rpx;
   border-bottom: 1rpx grey solid;
-  width: 160rpx;
+  width: 166rpx;
   margin: 0 auto;
 }
 
@@ -50,7 +31,6 @@
   height: 224rpx;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 
