@@ -9,3 +9,7 @@
   font-size: small;
   font-weight:400;
 }
+
+.foot {
+  margin-top: 10rpx;
+}
