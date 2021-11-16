@@ -4,3 +4,47 @@
   border:  red solid;
   margin: 30rpx 30rpx;
 }
+
+
+.box {
+  width: 224rpx;
+  height: 224rpx;
+}
+
+.rowItem {
+  display: flex;
+  justify-content: center;
+}
+
+.box1 {
+  background-color: #C17893;
+}
+
+.box2 {
+  background-color: #EA8F85;
+}
+
+.box3 {
+  background-color: #F9B476;
+}
+
+.Box {
+  width: 168rpx;
+  height: 168rpx;
+}
+
+.box4 {
+  background:#FFB5A2;
+}
+
+.box5 {
+  background: #FFC787;
+}
+
+.box6 {
+  background: #FFDF73;
+}
+
+.box7 {
+  background: #F9F871;
+}

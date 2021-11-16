@@ -1,8 +1,14 @@
 /* components/CharacterData/CharacterData.wxss */
 
 .inputDetail {
-  border:  goldenrod solid;
-  margin: 30rpx 30rpx;
+  /* border:  goldenrod solid; */
+  margin: 30rpx 270rpx;
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine ;
+  border-radius: 40rpx;
+  align-items: center;
+  padding: 20rpx;
 }
 
 .tips {
@@ -21,4 +27,47 @@
   border: indianred 1rpx solid ;
   border-radius: 30rpx;
   margin: 20rpx 150rpx;
+}
+
+/* .icon {
+  width: 50%;
+  height: 50%;
+} */
+
+.test {
+  /* border: solid red 1rpx; */
+  /* display: flex;
+  justify-content: center; */
+  padding: 0 10rpx;
+  border-bottom: 1rpx grey solid;
+  width: 160rpx;
+  margin: 0 auto;
+}
+
+
+.box {
+  width: 224rpx;
+  height: 224rpx;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+
+
+.rowItem {
+  display: flex;
+  justify-content: center;
+}
+
+.box1 {
+  background-color: #54D6CC;        
+}
+
+.box2 {
+  background-color: #6BE8C3;
+}
+
+.box3 {
+  background-color: #91F8B4;
 }

@@ -1,4 +1,17 @@
 
+<view class="rowItem">
+  <view class="box box1"></view>
+  <view class="box box2"></view>
+  <view class="box box3"></view>
+</view>
+
+<view class="rowItem">
+  <view class="Box box4"></view>
+  <view class="Box box5"></view>
+  <view class="Box box6"></view>
+  <view class="Box box7"></view>
+</view>
+
 
 <input class="inputDetail" placeholder="生命值" type="number" bindinput="inputHP" maxlength="6" value="{{HP?HP: '' }}" />
 
