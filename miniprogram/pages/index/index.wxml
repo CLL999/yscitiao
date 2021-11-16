@@ -24,3 +24,5 @@
   EnergyRecharge="{{DataInDetail.EnergyRecharge}}"
 
 />
+
+<view class="tips">由@万民堂主厨/Cirno制作~欢迎反馈意见</view>

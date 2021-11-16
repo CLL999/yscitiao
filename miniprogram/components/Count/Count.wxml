@@ -2,13 +2,15 @@
 
 <view class="container">
   <view class="kind">
-    <view class="item">生命:{{FinalHP}}</view>
-    <view class="item">攻击:{{FinalATK}}</view>
-    <view class="item">防御:{{FinalDEF}}</view>
-    <view class="item">精通:{{FinalElementalMastery}}</view>
-    <view class="item">暴击:{{FinalCritRate}}</view>
-    <view class="item">爆伤:{{FinalCritDMG}}</view>
-    <view class="item">充能:{{FinalEnergyRecharge}}</view>
+    <view class="layeredCard">
+      <view class="item">生命:{{FinalHP}}</view>
+      <view class="item">攻击:{{FinalATK}}</view>
+      <view class="item">防御:{{FinalDEF}}</view>
+      <view class="item">精通:{{FinalElementalMastery}}</view>
+      <view class="item">暴击:{{FinalCritRate}}</view>
+      <view class="item">爆伤:{{FinalCritDMG}}</view>
+      <view class="item">充能:{{FinalEnergyRecharge}}</view>
+    </view>
   </view>
   <checkbox-group bindchange="checkboxChange" class="checkbox">
     <checkbox value="攻击" checked="{{checkboxATK}}">攻击</checkbox>
