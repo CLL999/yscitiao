@@ -6,7 +6,11 @@
   color: red;
   display: flex;
   justify-content: center;
-  margin: 30rpx;
+}
+
+.container {
+  position: relative;
+  margin: 20rpx;
 }
 
 .item {
@@ -67,3 +71,28 @@
   z-index: -1;
 } 
 
+/* .glass {
+  background: rgba(75, 195, 193, 0.2);
+  backdrop-filter: blur(1rpx);
+  border-radius: 6rpx;
+  z-index: 1;
+} */
+
+
+.copy {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  right: 200rpx;
+  top: -5rpx;
+  /* right: 220rpx;
+  bottom: -82rpx; */
+}
+
+.copytips {
+  position: absolute;
+  font-size: smaller;
+  font-weight: lighter;
+  top: 23rpx;
+  right: 94rpx;
+}

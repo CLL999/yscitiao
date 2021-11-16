@@ -23,19 +23,42 @@ Component({
   },
   observers: {
     "HP,HPDefault": function () {
-      // if (!this.data.HPDefault) return;
+      this.setData({
+        checkboxHP: false,
+        checkboxATK: false,
+        checkboxHutao: false,
+        checkboxCritDMG: false,
+        checkboxCritRate: false,
+        checkboxEnergyRecharge: false,
+        checkboxElementalMastery: false,
+        checkboxDEF: false,
+        VisualItem: ""
+      })
+      if (!this.data.HPDefault) 
+        {
+          this.setData({FinalHP: 0});
+          return;
+        }
       this.setData({
         FinalHP: ((this.data.HP - 4780) / (this.data.HPDefault - 0.466 * ((this.data.Sands === "生命值%" ? 1 : 0) + (this.data.Goblet === "生命值%" ? 1 : 0) + (this.data.Circlet === "生命值%" ? 1 : 0))) / this.data.ForEachHP).toFixed(2),
       })
     },
     "ATK,ATKDefault": function () {
-      if (!this.data.ATKDefault) return;
+      if (!this.data.ATKDefault) 
+        {
+          this.setData({FinalATK: 0});
+          return;
+        }
       this.setData({
         FinalATK: ((((this.data.ATK - 311) / (this.data.ATKDefault)) - 0.466 * ((this.data.Sands === "攻击力%" ? 1 : 0) + (this.data.Goblet === "攻击力%" ? 1 : 0) + (this.data.Circlet === "攻击力%" ? 1 : 0))) / this.data.ForEachATK).toFixed(2),
       })
     },
     "DEF,DEFDefault": function () {
-      if (!this.data.DEFDefault) return;
+      if (!this.data.DEFDefault) 
+        {
+          this.setData({FinalDEF: 0});
+          return;
+        }
       this.setData({
         FinalDEF: (((this.data.DEF / this.data.DEFDefault) - 0.583 * ((this.data.Sands === "防御力%" ? 1 : 0) + (this.data.Circlet === "防御力%" ? 1 : 0) + (this.data.Goblet === "防御力%" ? 1 : 0))) / this.data.ForEachDEF).toFixed(2),
       })
@@ -84,8 +107,14 @@ Component({
     SUM: 0,
     VisualItem: "",
 
-    checkboxATK: false,
-    checkboxHutao: false,
+    // checkboxHP: false,
+    // checkboxATK: false,
+    // checkboxHutao: false,
+    // checkboxCritDMG: false,
+    // checkboxCritRate: false,
+    // checkboxEnergyRecharge: false,
+    // checkboxElementalMastery: false,
+    // checkboxDEF: false
   },
 
   /**
@@ -144,28 +173,26 @@ Component({
       });
       console.log("SUM ", this.data.SUM);
       console.log(this.data.VisualItem);
+    },
+    copy: function() {
+      let cpy = this.data.VisualItem+'='+this.data.SUM.toFixed(2);
+      console.log(cpy);
+      wx.setClipboardData({
+        data: cpy,
+      })
     }
   },
 
-  async attached() {
-    // let {HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet} = app.globalData.CharacterData;
-
-    // let {HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge} = app.globalData.DataInDetail;
-
-    // this.setData({HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet,HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge});
-
-    // console.log(this.data);
-  },
 
   pageLifetimes: {
     show: function() {
-      let {HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet} = app.globalData.CharacterData;
+      // let {HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet} = app.globalData.CharacterData;
 
-      let {HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge} = app.globalData.DataInDetail;
+      // let {HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge} = app.globalData.DataInDetail;
   
-      this.setData({HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet,HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge});
+      // this.setData({HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet,HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge});
   
-      console.log(this.data);
+      // console.log(this.data);
     }
   }
 })

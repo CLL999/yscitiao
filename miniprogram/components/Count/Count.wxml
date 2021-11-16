@@ -1,4 +1,8 @@
-<view class="tips">--总结--</view>
+<view class="container">
+  <text class="tips">--总结--</text>
+  <image src="../../assets/icons/copy.png" class="copy" bindtap="copy"></image>
+  <text class="copytips">复制结果</text>
+</view>
 
 <view class="container">
   <view class="kind">
@@ -13,20 +17,14 @@
     </view>
   </view>
   <checkbox-group bindchange="checkboxChange" class="checkbox">
-    <checkbox value="攻击" checked="{{checkboxATK}}">攻击</checkbox>
-    <checkbox value="暴击">暴击</checkbox>
-    <checkbox value="爆伤">爆伤</checkbox>
-    <checkbox value="精通">精通</checkbox>
-    <checkbox value="充能">充能</checkbox>
-    <checkbox value="生命">生命</checkbox>
-    <checkbox value="防御">防御</checkbox>
-    <checkbox value="胡桃攻击" checked="{{checkedboxHutao}}">攻击(胡桃)</checkbox>
-     <!-- <label class="label" wx:for="{{['攻击','暴击','爆伤','精通','充能','生命','防御','攻击(胡桃)']}}" wx:key="*this">
-      <view class="labelCheckbox">
-        <checkbox value="{{item}}" />
-      </view>
-      <view class="labelItem">{{item}}</view>
-    </label> -->
+    <checkbox value="攻击" checked='{{checkboxATK}}' >攻击</checkbox>
+    <checkbox value="暴击" checked='{{checkboxCritRate}}' >暴击</checkbox>
+    <checkbox value="爆伤" checked='{{checkboxCritDMG}}' >爆伤</checkbox>
+    <checkbox value="精通" checked='{{checkboxElementalMastery}}' >精通</checkbox>
+    <checkbox value="充能" checked='{{checkboxEnergyRecharge}}' >充能</checkbox>
+    <checkbox value="生命" checked='{{checkboxHP}}' >生命</checkbox>
+    <checkbox value="防御" checked='{{checkboxDEF}}' >防御</checkbox>
+    <checkbox value="胡桃攻击" checked='{{checkedboxHutao}}' >攻击(胡桃)</checkbox>
   </checkbox-group>
 </view>
 
