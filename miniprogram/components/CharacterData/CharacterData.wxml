@@ -14,7 +14,7 @@
 </view>
 
 <view class="row">
-  <view class="container">
+  <view class="container container1">
     <view class="tips">-时之沙属性-</view>
     <picker bindchange="bindSandsPickerChange" value="{{SandsIndex}}" range="{{SandsArray}}">
       <view class="picker">
@@ -23,7 +23,7 @@
       </view>
     </picker>
   </view>
-  <view class="container">
+  <view class="container container2">
     <view class="tips">-空之杯属性-</view>
     <picker bindchange="bindGobletPickerChange" value="{{GobletIndex}}" range="{{GobletArray}}">
       <view class="picker">
@@ -32,7 +32,7 @@
       </view>
     </picker>
   </view>
-  <view class="container">
+  <view class="container container3">
     <view class="tips">-理之冠属性-</view>
     <picker bindchange="bindCircletPickerChange" value="{{CircletIndex}}" range="{{CircletArray}}">
       <view class="picker">

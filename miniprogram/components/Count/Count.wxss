@@ -16,6 +16,7 @@
 .item {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: darksalmon;
 }
 
@@ -44,8 +45,9 @@
 .kind {
   position: flex;
   justify-content: center;
+  align-content: center;
   width: 300rpx;
-  height: 300rpx; 
+  height: 360rpx; 
   border: 1rpx gray solid;
   margin: 0 auto;
   z-index: 1;
@@ -54,6 +56,8 @@
 
 .layeredCard {
   position: relative;
+  align-content: center;
+  justify-content: center;
 }
 
 .layeredCard::before {
@@ -63,7 +67,7 @@
   top: 0;
   left: 0;
   position: absolute;
-  transform: translate(1rem, 1rem);
+  transform: translate(1rem, 1.2rem);
 
   height: 100%;
   width: 100%;

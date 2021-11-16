@@ -20,15 +20,15 @@
 }
 
 .box1 {
-  background-color: #C17893;
+  background-color: #58A4DC;
 }
 
 .box2 {
-  background-color: #EA8F85;
+  background-color: #6F8CD0;
 }
 
 .box3 {
-  background-color: #F9B476;
+  background-color: #8871B8;
 }
 
 .Box {
@@ -39,19 +39,19 @@
 }
 
 .box4 {
-  background:#FFB5A2;
+  background:#FFCA69;
 }
 
 .box5 {
-  background: #FFC787;
+  background: #FFA07F;
 }
 
 .box6 {
-  background: #FFDF73;
+  background: #FF829D;
 }
 
 .box7 {
-  background: #F9F871;
+  background: #CE75B4;
 }
 
 .inputDetail {

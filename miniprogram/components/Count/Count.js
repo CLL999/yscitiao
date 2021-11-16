@@ -107,14 +107,6 @@ Component({
     SUM: 0,
     VisualItem: "",
 
-    // checkboxHP: false,
-    // checkboxATK: false,
-    // checkboxHutao: false,
-    // checkboxCritDMG: false,
-    // checkboxCritRate: false,
-    // checkboxEnergyRecharge: false,
-    // checkboxElementalMastery: false,
-    // checkboxDEF: false
   },
 
   /**
@@ -185,14 +177,5 @@ Component({
 
 
   pageLifetimes: {
-    show: function() {
-      // let {HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet} = app.globalData.CharacterData;
-
-      // let {HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge} = app.globalData.DataInDetail;
-  
-      // this.setData({HPDefault,ATKDefault,DEFDefault,Sands,Goblet,Circlet,HP,ATK,DEF,CritRate,CritDMG,ElementalMastery,EnergyRecharge});
-  
-      // console.log(this.data);
-    }
   }
 })

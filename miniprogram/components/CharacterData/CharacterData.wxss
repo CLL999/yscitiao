@@ -13,7 +13,6 @@
 }
 
 .container {
-  border: indianred 1rpx solid ;
   border-radius: 30rpx;
   margin: 20rpx 150rpx;
 }
@@ -50,4 +49,16 @@
 
 .box3 {
   background-color: #91F8B4;
+}
+
+.container1 {
+  background-color: #4EE7D4;
+}
+
+.container2 {
+  background-color: #38D2E1;
+}
+
+.container3 {
+  background-color: #54BADE;
 }
