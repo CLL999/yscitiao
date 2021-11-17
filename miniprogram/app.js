@@ -33,7 +33,6 @@ App({
     //     );
     //   }
     // );
-    console.log("hi");
     wx.getStorage({
       key: this.globalData.character
     }).then(res => {

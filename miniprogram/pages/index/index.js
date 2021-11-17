@@ -29,9 +29,11 @@ Page({
       DataInDetail: e.detail.DataInDetail,
       CharacterData: e.detail.CharacterData
     });
+
     this.selectComponent("#CharacterData").Refresh();
     this.selectComponent("#DataInDetail").Refresh();
     this.onLoad();
+    
   },
 
 

@@ -15,23 +15,28 @@ Component({
       wx.getStorage({
         key: app.globalData.character
       }).then(res => {
-        console.log("成功获取",res);
+        console.log("成功获取", res);
         getApp().globalData.CharacterData = res.data.CharacterData;
         getApp().globalData.DataInDetail = res.data.DataInDetail;
-        console.log("全局",app.globalData);
         // 发送信号更新
-        this.triggerEvent("ChangeCharacter", {CharacterData:res.data.CharacterData,DataInDetail:res.data.DataInDetail}); 
+        this.triggerEvent("ChangeCharacter", {
+          CharacterData: res.data.CharacterData,
+          DataInDetail: res.data.DataInDetail
+        });
       }).catch(err => {
         console.log(err);
-        getApp().globalData.CharacterData = {CircletIndex: "",
-        GobletIndex: "",
-        SandsIndex: ""
-      
-      };
+        getApp().globalData.CharacterData = {
+          CircletIndex: "",
+          GobletIndex: "",
+          SandsIndex: ""
+
+        };
         getApp().globalData.DataInDetail = {};
-        console.log("全局",app.globalData);
         // 发送信号更新
-        this.triggerEvent("ChangeCharacter", {CharacterData: {},DataInDetail:{}}); 
+        this.triggerEvent("ChangeCharacter", {
+          CharacterData: {},
+          DataInDetail: {}
+        });
       });
 
     }
