@@ -10,8 +10,9 @@ Component({
 
   observers: {
     "nowCharacter": function () {
-      console.log("角色变化，现在是", this.data.nowCharacter);
+      console.log("角色变化，现在是", this.data.NowCharacter);
       getApp().globalData.character = this.data.nowCharacter;
+      getApp().globalData.Character = this.data.NowCharacter;
       wx.getStorage({
         key: app.globalData.character
       }).then(res => {
@@ -52,6 +53,7 @@ Component({
     // nowCharacterSrc: "../../assets/icons/pyro/klee.png",
 
     nowCharacter: "klee",
+    NowCharacter: "可莉",
     nowElement: "pyro",
 
     elementList: ["pyro", "hydro", "anemo", "electro", "cryo", "geo"],
@@ -129,22 +131,28 @@ Component({
       let characterIndex = this.data.characterIndex;
       if (this.data.nowElement !== nowElement) characterIndex = 0;
       let nowCharacter = this.data.characterList[characterIndex];
+      let NowCharacter = this.data.CharacterList[characterIndex];
+      // console.log("出中文！",NowCharacter);
       this.setData({
         elementIndex: e.detail.value,
         nowElement,
         nowElementSrc: "../../assets/icons/" + nowElement + ".png",
         characterIndex,
         nowCharacterSrc: "../../assets/icons/" + nowElement + "/" + nowCharacter + ".png",
-        nowCharacter
+        nowCharacter,
+        NowCharacter
       })
     },
 
     CharacterPickerChange: function (e) {
       let nowCharacter = this.data.characterList[e.detail.value];
+      let NowCharacter = this.data.CharacterList[e.detail.value];
+      // console.log("出中文！",NowCharacter);
       this.setData({
         characterIndex: e.detail.value,
         nowCharacter,
         nowCharacterSrc: "../../assets/icons/" + this.data.nowElement + "/" + nowCharacter + ".png",
+        NowCharacter
       })
     },
 

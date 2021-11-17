@@ -15,6 +15,7 @@ App({
     };
     this.globalData = {
       character: "klee",
+      Character: "可莉"
     };
 
     // wx.getStorage({

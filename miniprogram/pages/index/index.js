@@ -5,7 +5,9 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    // imageSrc: "../../assets/characters/klee.png"
+  },
 
   inputDetail: function (e) {
     this.setData({
@@ -41,7 +43,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let character = app.globalData.character;
+    // let imageSrc = "../../assets/characters/"+character+".png";
+    let imageSrc = "http://qianchen.ink/sourse/characters/"+character+".png";
+    this.setData({imageSrc});
   },
 
   /**

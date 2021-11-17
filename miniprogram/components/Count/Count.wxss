@@ -39,7 +39,7 @@
   font-size: larger;
   display: flex;
   justify-content: center;
-  margin: 0 30rpx;
+  margin: 0 100rpx;
 }
 
 .kind {
@@ -75,13 +75,6 @@
   z-index: -1;
 }
 
-/* .glass {
-  background: rgba(75, 195, 193, 0.2);
-  backdrop-filter: blur(1rpx);
-  border-radius: 6rpx;
-  z-index: 1;
-} */
-
 
 .copy {
   position: absolute;
@@ -100,3 +93,4 @@
   top: 23rpx;
   right: 94rpx;
 }
+

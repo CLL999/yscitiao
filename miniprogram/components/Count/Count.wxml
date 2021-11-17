@@ -28,4 +28,6 @@
   </checkbox-group>
 </view>
 
-<view wx:if="{{VisualItem}}" class="Final">{{VisualItem}}:{{SUM}}</view>
+<view class="FianlSum">
+  <view wx:if="{{VisualItem}}" class="Final">{{VisualItem}}:{{SUM}}</view>
+</view>

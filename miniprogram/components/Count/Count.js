@@ -170,7 +170,7 @@ Component({
       console.log(this.data.VisualItem);
     },
     copy: function () {
-      let cpy = this.data.VisualItem + '=' + this.data.SUM.toFixed(2);
+      let cpy = app.globalData.Character+","+this.data.VisualItem + '=' + this.data.SUM.toFixed(2);
       console.log(cpy);
       wx.setClipboardData({
         data: cpy,
