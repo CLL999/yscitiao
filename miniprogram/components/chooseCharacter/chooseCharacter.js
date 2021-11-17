@@ -7,6 +7,12 @@ Component({
 
   },
 
+  observers: {
+    "nowCharacter": function() 
+    { 
+      console.log("角色变化，现在是",this.data.nowCharacter);
+    }
+  },
   /**
    * 组件的初始数据
    */
@@ -92,12 +98,14 @@ Component({
           })
           break;
       }
+      let nowCharacter = this.data.characterList[0];
       this.setData({
         elementIndex: e.detail.value,
         nowElement,
         nowElementSrc: "../../assets/icons/" + nowElement + ".png",
         characterIndex: 0,
-        nowCharacterSrc: "../../assets/icons/" + nowElement + "/" + this.data.characterList[0] + ".png"
+        nowCharacterSrc: "../../assets/icons/" + nowElement + "/" + nowCharacter + ".png",
+        nowCharacter
       })
     },
 
