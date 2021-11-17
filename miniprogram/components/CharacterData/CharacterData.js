@@ -22,6 +22,7 @@ Component({
         key: "CharacterData",
         data: CharacterData,
       });
+      
       // wx.getStorage({
       //   key: "CharacterData"
       // }).then(
@@ -38,7 +39,7 @@ Component({
       //     );
       //   }
       // );
-      
+
       // wx.getStorage({
       //   key: "CharacterData"
       // }).then(res => {
