@@ -13,3 +13,14 @@
 .foot {
   margin-top: 10rpx;
 }
+
+.backgroundImage {
+  position: absolute;
+  width: 100%;
+  z-index: -100;
+  opacity: 0.4;
+}
+
+.imageContainer {
+  position: relative;
+}

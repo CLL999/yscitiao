@@ -21,7 +21,10 @@ Component({
       let character = app.globalData.character;
       wx.setStorage({
         key: character,
-        data: {DataInDetail, CharacterData}
+        data: {
+          DataInDetail,
+          CharacterData
+        }
       });
       this.triggerEvent("input", {
         DataInDetail
@@ -39,50 +42,71 @@ Component({
   methods: {
     inputHP: function (e) {
       console.log(e.detail.value);
-      this.setData({
-        HP: e.detail.value
-      })
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          HP: e.detail.value
+        })
     },
     inputDEF: function (e) {
       console.log(e.detail.value);
-      this.setData({
-        DEF: e.detail.value
-      })
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          DEF: e.detail.value
+        })
     },
 
     inputElementalMastery: function (e) {
       console.log(e.detail.value);
-      this.setData({
-        ElementalMastery: e.detail.value
-      })
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          ElementalMastery: e.detail.value
+        });
     },
 
     inputATK: function (e) {
       console.log(e.detail.value);
-      this.setData({
-        ATK: e.detail.value
-      })
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          ATK: e.detail.value
+        })
     },
 
     inputCritRate: function (e) {
       console.log(e.detail.value);
-      this.setData({
-        CritRate: e.detail.value
-      })
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          CritRate: e.detail.value
+        })
     },
 
     inputCritDMG: function (e) {
       console.log(e.detail.value);
-      this.setData({
-        CritDMG: e.detail.value
-      })
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          CritDMG: e.detail.value
+        })
     },
 
     inputEnergyRecharge: function (e) {
       console.log(e.detail.value);
-      this.setData({
-        EnergyRecharge: e.detail.value
-      })
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          EnergyRecharge: e.detail.value
+        })
     },
 
     Refresh: function () {
@@ -104,31 +128,11 @@ Component({
         EnergyRecharge,
         HP
       });
-    }
+    },
+
   },
 
   async attached() {
-
-    // let {
-    //   ATK,
-    //   CritDMG,
-    //   CritRate,
-    //   DEF,
-    //   ElementalMastery,
-    //   EnergyRecharge,
-    //   HP
-    // } = app.globalData.DataInDetail;
-    // this.setData({
-    //   ATK,
-    //   CritDMG,
-    //   CritRate,
-    //   DEF,
-    //   ElementalMastery,
-    //   EnergyRecharge,
-    //   HP
-    // });
-
-    // console.log("data!!",this.data);
 
     this.Refresh();
   }

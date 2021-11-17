@@ -1,3 +1,7 @@
+<view class="imageContainer">
+  <image src="../../assets/characters/klee.png" mode="widthFix" class="backgroundImage"></image>
+</view>
+
 <view class="tips">基于@NGA-pressure_pressure的帖子制作</view>
 
 <view class="head tips">选择角色</view>

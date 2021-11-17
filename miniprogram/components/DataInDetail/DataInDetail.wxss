@@ -20,15 +20,15 @@
 }
 
 .box1 {
-  background-color: #58A4DC;
+  background-color: #00F9FF;
 }
 
 .box2 {
-  background-color: #6F8CD0;
+  background-color: #56D1FF;
 }
 
 .box3 {
-  background-color: #8871B8;
+  background-color: #ABA3FA;
 }
 
 .Box {

@@ -21,16 +21,19 @@ Component({
       let character = app.globalData.character;
       getApp().globalData.CharacterData = this.data;
       console.log(app.globalData);
-      
+
       wx.setStorage({
         key: character,
-        data: {CharacterData, DataInDetail},
+        data: {
+          CharacterData,
+          DataInDetail
+        },
       });
 
       this.triggerEvent("input", {
         CharacterData
       });
-      
+
     }
   },
 
@@ -74,31 +77,43 @@ Component({
     },
 
     inputATK: function (e) {
-      this.setData({
-        ATKDefault: e.detail.value
-      })
+      console.log(e.detail.value);
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          ATKDefault: e.detail.value
+        })
     },
     inputHP: function (e) {
-      this.setData({
-        HPDefault: e.detail.value
-      })
+      console.log(e.detail.value);
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          HPDefault: e.detail.value
+        })
       console.log(e.detail);
     },
     inputDEF: function (e) {
-      this.setData({
-        DEFDefault: e.detail.value
-      })
+      console.log(e.detail.value);
+      let value = (e.detail.value).toString();
+      console.log(value[value.length - 1]);
+      if (value[value.length - 1] !== '.')
+        this.setData({
+          DEFDefault: e.detail.value
+        })
     },
     Refresh: function () {
       this.setData({
         CircletIndex: app.globalData.CharacterData.CircletIndex,
         SandsIndex: app.globalData.CharacterData.SandsIndex,
         GobletIndex: app.globalData.CharacterData.GobletIndex,
-  
+
         Circlet: this.data.CircletArray[app.globalData.CharacterData.CircletIndex],
         Sands: this.data.SandsArray[app.globalData.CharacterData.SandsIndex],
         Goblet: this.data.GobletArray[app.globalData.CharacterData.GobletIndex],
-  
+
         HPDefault: app.globalData.CharacterData.HPDefault,
         ATKDefault: app.globalData.CharacterData.ATKDefault,
         DEFDefault: app.globalData.CharacterData.DEFDefault
@@ -106,7 +121,7 @@ Component({
     }
   },
 
-   async attached() {
+  async attached() {
     await this.Refresh();
   },
 

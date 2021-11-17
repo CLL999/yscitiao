@@ -1,26 +1,28 @@
 <view class="rowItem">
   <view class="box box1">
-    <input class="inputDetail" placeholder="生命值" type="number" bindinput="inputHP" maxlength="6" value="{{HP?HP: '' }}" />
+    <input class="inputDetail" placeholder="生命值" type="digit" bindinput="inputHP" maxlength="6" value="{{HP?HP: '' }}" />
   </view>
   <view class="box box2">
-    <input class="inputDetail" placeholder="攻击力" type="number" bindinput="inputATK" maxlength="6" value="{{ATK?ATK: '' }}" />
+    <input class="inputDetail" placeholder="攻击力" type="digit" bindinput="inputATK" maxlength="6" value="{{ATK?ATK: '' }}" />
   </view>
   <view class="box box3">
-    <input class="inputDetail" placeholder="防御力" type="number" bindinput="inputDEF" maxlength="6" value="{{DEF?DEF: '' }}" />
+    <input class="inputDetail" placeholder="防御力" type="digit" bindinput="inputDEF" maxlength="6" value="{{DEF?DEF: '' }}" />
   </view>
 </view>
 
 <view class="rowItem">
   <view class="Box box4">
-    <input class="inputDetail" placeholder="元素精通" type="number" bindinput="inputElementalMastery" maxlength="6" value="{{ElementalMastery?ElementalMastery: '' }}" />
+    <input class="inputDetail" placeholder="元素精通" type="digit" bindinput="inputElementalMastery" maxlength="6" value="{{ElementalMastery?ElementalMastery: '' }}" 
+    bindblur="blur"
+    />
   </view>
   <view class="Box box5">
-    <input class="inputDetail" placeholder="暴击率/%" type="number" bindinput="inputCritRate" maxlength="6" value="{{CritRate?CritRate: '' }}" />
+    <input class="inputDetail" placeholder="暴击率/%" type="digit" bindinput="inputCritRate" maxlength="6" value="{{CritRate?CritRate: '' }}" />
   </view>
   <view class="Box box6">
-    <input class="inputDetail" placeholder="暴击伤害/%" type="number" bindinput="inputCritDMG" maxlength="6" value="{{CritDMG?CritDMG: '' }}" />
+    <input class="inputDetail" placeholder="暴击伤害/%" type="digit" bindinput="inputCritDMG" maxlength="6" value="{{CritDMG?CritDMG: '' }}" />
   </view>
   <view class="Box box7">
-    <input class="inputDetail" placeholder="充能效率/%" type="number" bindinput="inputEnergyRecharge" maxlength="6" value="{{EnergyRecharge?EnergyRecharge: '' }}" />
+    <input class="inputDetail" placeholder="充能效率/%" type="digit" bindinput="inputEnergyRecharge" maxlength="6" value="{{EnergyRecharge?EnergyRecharge: '' }}" />
   </view>
 </view>
