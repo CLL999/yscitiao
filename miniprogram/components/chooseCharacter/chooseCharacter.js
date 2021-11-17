@@ -1,3 +1,4 @@
+var app = getApp();
 // components/chooseCharacter/chooseCharacter.js
 Component({
   /**
@@ -11,6 +12,8 @@ Component({
     "nowCharacter": function() 
     { 
       console.log("角色变化，现在是",this.data.nowCharacter);
+      getApp().globalData.character = this.data.nowCharacter;
+      console.log(app.globalData.character);
     }
   },
   /**

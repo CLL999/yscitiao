@@ -13,6 +13,9 @@ App({
         traceUser: true,
       });
     }
+    this.data = {
+      character: "klee"
+    },
     wx.getStorage({
       key: "CharacterData"
     }).then(
@@ -29,7 +32,6 @@ App({
         );
       }
     );
-
   },
 
 });
