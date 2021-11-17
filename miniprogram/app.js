@@ -13,7 +13,7 @@ App({
         traceUser: true,
       });
     }
-    this.data = {
+    this.globalData = {
       character: "klee"
     },
     wx.getStorage({

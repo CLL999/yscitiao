@@ -17,6 +17,7 @@ Component({
   observers: {
     "**": function () {
       var CharacterData = this.data;
+      let character = app.globalData.character;
       wx.setStorage({
         key: "CharacterData",
         data: CharacterData,
@@ -37,14 +38,16 @@ Component({
       //     );
       //   }
       // );
-      wx.getStorage({
-        key: "CharacterData"
-      }).then(res => {
-        getApp().globalData.CharacterData = res.data;
+      
+      // wx.getStorage({
+      //   key: "CharacterData"
+      // }).then(res => {
+      //   getApp().globalData.CharacterData = res.data;
 
-        console.log("APP", app.globalData.CharacterData);
-      });
-      console.log("data", this.data);
+      //   console.log("APP", app.globalData.CharacterData);
+      // });
+      // console.log("data", this.data);
+
       this.triggerEvent("input", {
         CharacterData
       });
