@@ -101,12 +101,14 @@ Component({
           })
           break;
       }
-      let nowCharacter = this.data.characterList[0];
+      let characterIndex = this.data.characterIndex;
+      if (this.data.nowElement !== nowElement) characterIndex = 0;
+      let nowCharacter = this.data.characterList[characterIndex];
       this.setData({
         elementIndex: e.detail.value,
         nowElement,
         nowElementSrc: "../../assets/icons/" + nowElement + ".png",
-        characterIndex: 0,
+        characterIndex,
         nowCharacterSrc: "../../assets/icons/" + nowElement + "/" + nowCharacter + ".png",
         nowCharacter
       })
