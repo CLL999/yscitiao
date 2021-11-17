@@ -17,14 +17,14 @@
     </view>
   </view>
   <checkbox-group bindchange="checkboxChange" class="checkbox">
-    <checkbox value="攻击" checked='{{checkboxATK}}' >攻击</checkbox>
-    <checkbox value="暴击" checked='{{checkboxCritRate}}' >暴击</checkbox>
-    <checkbox value="爆伤" checked='{{checkboxCritDMG}}' >爆伤</checkbox>
-    <checkbox value="精通" checked='{{checkboxElementalMastery}}' >精通</checkbox>
-    <checkbox value="充能" checked='{{checkboxEnergyRecharge}}' >充能</checkbox>
-    <checkbox value="生命" checked='{{checkboxHP}}' >生命</checkbox>
-    <checkbox value="防御" checked='{{checkboxDEF}}' >防御</checkbox>
-    <checkbox value="胡桃攻击" checked='{{checkedboxHutao}}' >攻击(胡桃)</checkbox>
+    <checkbox value="攻击" checked='{{checkboxATK}}'>攻击</checkbox>
+    <checkbox value="暴击" checked='{{checkboxCritRate}}'>暴击</checkbox>
+    <checkbox value="爆伤" checked='{{checkboxCritDMG}}'>爆伤</checkbox>
+    <checkbox value="精通" checked='{{checkboxElementalMastery}}'>精通</checkbox>
+    <checkbox value="充能" checked='{{checkboxEnergyRecharge}}'>充能</checkbox>
+    <checkbox value="生命" checked='{{checkboxHP}}'>生命</checkbox>
+    <checkbox value="防御" checked='{{checkboxDEF}}'>防御</checkbox>
+    <checkbox value="胡桃攻击" checked='{{checkedboxHutao}}'>攻击(胡桃)</checkbox>
   </checkbox-group>
 </view>
 

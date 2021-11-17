@@ -47,7 +47,7 @@
   justify-content: center;
   align-content: center;
   width: 300rpx;
-  height: 360rpx; 
+  height: 330rpx;
   border: 1rpx gray solid;
   margin: 0 auto;
   z-index: 1;
@@ -67,13 +67,13 @@
   top: 0;
   left: 0;
   position: absolute;
-  transform: translate(1rem, 1.2rem);
+  transform: translate(37.5rpx, 37.5rpx);
 
   height: 100%;
   width: 100%;
 
   z-index: -1;
-} 
+}
 
 /* .glass {
   background: rgba(75, 195, 193, 0.2);

@@ -7,7 +7,7 @@
   color: brown;
   margin: 30rpx 74rpx;
   font-size: small;
-  font-weight:400;
+  font-weight: 400;
 }
 
 .foot {

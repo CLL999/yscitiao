@@ -85,8 +85,24 @@ Component({
   },
 
   async attached() {
-    let {ATK, CritDMG, CritRate, DEF, ElementalMastery, EnergyRecharge, HP} = app.globalData.DataInDetail;
-    this.setData({ATK, CritDMG, CritRate, DEF, ElementalMastery, EnergyRecharge, HP});
+    let {
+      ATK,
+      CritDMG,
+      CritRate,
+      DEF,
+      ElementalMastery,
+      EnergyRecharge,
+      HP
+    } = app.globalData.DataInDetail;
+    this.setData({
+      ATK,
+      CritDMG,
+      CritRate,
+      DEF,
+      ElementalMastery,
+      EnergyRecharge,
+      HP
+    });
     // console.log("data!!",this.data);
   }
 })

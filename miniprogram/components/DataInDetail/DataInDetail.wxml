@@ -1,4 +1,3 @@
-
 <view class="rowItem">
   <view class="box box1">
     <input class="inputDetail" placeholder="生命值" type="number" bindinput="inputHP" maxlength="6" value="{{HP?HP: '' }}" />

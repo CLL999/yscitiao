@@ -37,11 +37,14 @@ Component({
       //     );
       //   }
       // );
-      wx.getStorage({key: "CharacterData"}).then(res => 
-          {getApp().globalData.CharacterData = res.data;
-          
-      console.log("APP",app.globalData.CharacterData);});
-      console.log("data",this.data);
+      wx.getStorage({
+        key: "CharacterData"
+      }).then(res => {
+        getApp().globalData.CharacterData = res.data;
+
+        console.log("APP", app.globalData.CharacterData);
+      });
+      console.log("data", this.data);
       this.triggerEvent("input", {
         CharacterData
       });
@@ -52,9 +55,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-    SandsArray: ["攻击力%","生命值%","防御力%","元素精通","充能效率%"],
-    GobletArray: ["属性伤害%","元素精通","生命值%","攻击力%","防御力%"],
-    CircletArray: ["暴击伤害%","暴击率%","治疗加成","元素精通","生命值%","攻击力%","防御力%"],
+    SandsArray: ["攻击力%", "生命值%", "防御力%", "元素精通", "充能效率%"],
+    GobletArray: ["属性伤害%", "元素精通", "生命值%", "攻击力%", "防御力%"],
+    CircletArray: ["暴击伤害%", "暴击率%", "治疗加成", "元素精通", "生命值%", "攻击力%", "防御力%"],
     SandsIndex: "",
     GobletIndex: "",
     CircletIndex: "",
@@ -68,14 +71,23 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    bindGobletPickerChange: function(e) {
-      this.setData({GobletIndex: e.detail.value, Goblet: this.data.GobletArray[e.detail.value]});
+    bindGobletPickerChange: function (e) {
+      this.setData({
+        GobletIndex: e.detail.value,
+        Goblet: this.data.GobletArray[e.detail.value]
+      });
     },
-    bindSandsPickerChange: function(e) {
-      this.setData({SandsIndex: e.detail.value, Sands: this.data.SandsArray[e.detail.value]});
+    bindSandsPickerChange: function (e) {
+      this.setData({
+        SandsIndex: e.detail.value,
+        Sands: this.data.SandsArray[e.detail.value]
+      });
     },
-    bindCircletPickerChange: function(e) {
-      this.setData({CircletIndex: e.detail.value, Circlet: this.data.CircletArray[e.detail.value]});
+    bindCircletPickerChange: function (e) {
+      this.setData({
+        CircletIndex: e.detail.value,
+        Circlet: this.data.CircletArray[e.detail.value]
+      });
     },
 
     inputATK: function (e) {
@@ -98,20 +110,18 @@ Component({
 
   async attached() {
     // console.log(app.globalData.CharacterData);
-    this.setData(
-      {
-        CircletIndex: app.globalData.CharacterData.CircletIndex,
-        SandsIndex: app.globalData.CharacterData.SandsIndex,
-        GobletIndex: app.globalData.CharacterData.GobletIndex,
-        
-        Circlet: this.data.CircletArray[app.globalData.CharacterData.CircletIndex],
-        Sands: this.data.SandsArray[app.globalData.CharacterData.SandsIndex],
-        Goblet: this.data.GobletArray[app.globalData.CharacterData.GobletIndex],
+    this.setData({
+      CircletIndex: app.globalData.CharacterData.CircletIndex,
+      SandsIndex: app.globalData.CharacterData.SandsIndex,
+      GobletIndex: app.globalData.CharacterData.GobletIndex,
 
-        HPDefault: app.globalData.CharacterData.HPDefault,
-        ATKDefault: app.globalData.CharacterData.ATKDefault,
-        DEFDefault: app.globalData.CharacterData.DEFDefault
-      }
-    );
+      Circlet: this.data.CircletArray[app.globalData.CharacterData.CircletIndex],
+      Sands: this.data.SandsArray[app.globalData.CharacterData.SandsIndex],
+      Goblet: this.data.GobletArray[app.globalData.CharacterData.GobletIndex],
+
+      HPDefault: app.globalData.CharacterData.HPDefault,
+      ATKDefault: app.globalData.CharacterData.ATKDefault,
+      DEFDefault: app.globalData.CharacterData.DEFDefault
+    });
   },
 })

@@ -7,22 +7,6 @@
 
 <DataInDetail bindinput="inputDetail" />
 
-<Count 
-  HPDefault="{{CharacterData.HPDefault}}"
-  ATKDefault="{{CharacterData.ATKDefault}}"
-  DEFDefault="{{CharacterData.DEFDefault}}"
-  Sands="{{CharacterData.Sands}}"
-  Goblet="{{CharacterData.Goblet}}"
-  Circlet="{{CharacterData.Circlet}}"
-
-  HP="{{DataInDetail.HP}}"
-  ATK="{{DataInDetail.ATK}}"
-  DEF="{{DataInDetail.DEF}}"
-  CritRate="{{DataInDetail.CritRate}}"
-  CritDMG="{{DataInDetail.CritDMG}}"
-  ElementalMastery="{{DataInDetail.ElementalMastery}}"
-  EnergyRecharge="{{DataInDetail.EnergyRecharge}}"
-
-/>
+<Count HPDefault="{{CharacterData.HPDefault}}" ATKDefault="{{CharacterData.ATKDefault}}" DEFDefault="{{CharacterData.DEFDefault}}" Sands="{{CharacterData.Sands}}" Goblet="{{CharacterData.Goblet}}" Circlet="{{CharacterData.Circlet}}" HP="{{DataInDetail.HP}}" ATK="{{DataInDetail.ATK}}" DEF="{{DataInDetail.DEF}}" CritRate="{{DataInDetail.CritRate}}" CritDMG="{{DataInDetail.CritDMG}}" ElementalMastery="{{DataInDetail.ElementalMastery}}" EnergyRecharge="{{DataInDetail.EnergyRecharge}}" />
 
 <view class="tips foot">由@万民堂主厨/Cirno339制作~欢迎反馈意见</view>

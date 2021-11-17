@@ -34,31 +34,34 @@ Component({
         checkboxDEF: false,
         VisualItem: ""
       })
-      if (!this.data.HPDefault) 
-        {
-          this.setData({FinalHP: 0});
-          return;
-        }
+      if (!this.data.HPDefault) {
+        this.setData({
+          FinalHP: 0
+        });
+        return;
+      }
       this.setData({
         FinalHP: ((this.data.HP - 4780) / (this.data.HPDefault - 0.466 * ((this.data.Sands === "生命值%" ? 1 : 0) + (this.data.Goblet === "生命值%" ? 1 : 0) + (this.data.Circlet === "生命值%" ? 1 : 0))) / this.data.ForEachHP).toFixed(2),
       })
     },
     "ATK,ATKDefault": function () {
-      if (!this.data.ATKDefault) 
-        {
-          this.setData({FinalATK: 0});
-          return;
-        }
+      if (!this.data.ATKDefault) {
+        this.setData({
+          FinalATK: 0
+        });
+        return;
+      }
       this.setData({
         FinalATK: ((((this.data.ATK - 311) / (this.data.ATKDefault)) - 0.466 * ((this.data.Sands === "攻击力%" ? 1 : 0) + (this.data.Goblet === "攻击力%" ? 1 : 0) + (this.data.Circlet === "攻击力%" ? 1 : 0))) / this.data.ForEachATK).toFixed(2),
       })
     },
     "DEF,DEFDefault": function () {
-      if (!this.data.DEFDefault) 
-        {
-          this.setData({FinalDEF: 0});
-          return;
-        }
+      if (!this.data.DEFDefault) {
+        this.setData({
+          FinalDEF: 0
+        });
+        return;
+      }
       this.setData({
         FinalDEF: (((this.data.DEF / this.data.DEFDefault) - 0.583 * ((this.data.Sands === "防御力%" ? 1 : 0) + (this.data.Circlet === "防御力%" ? 1 : 0) + (this.data.Goblet === "防御力%" ? 1 : 0))) / this.data.ForEachDEF).toFixed(2),
       })
@@ -166,8 +169,8 @@ Component({
       console.log("SUM ", this.data.SUM);
       console.log(this.data.VisualItem);
     },
-    copy: function() {
-      let cpy = this.data.VisualItem+'='+this.data.SUM.toFixed(2);
+    copy: function () {
+      let cpy = this.data.VisualItem + '=' + this.data.SUM.toFixed(2);
       console.log(cpy);
       wx.setClipboardData({
         data: cpy,
@@ -176,6 +179,5 @@ Component({
   },
 
 
-  pageLifetimes: {
-  }
+  pageLifetimes: {}
 })
