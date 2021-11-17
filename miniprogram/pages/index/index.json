@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "DataInDetail": "../../components/DataInDetail/DataInDetail" ,
+    "DataInDetail": "../../components/DataInDetail/DataInDetail",
     "CharacterData": "../../components/CharacterData/CharacterData",
-    "Count": "../../components/Count/Count"
+    "Count": "../../components/Count/Count",
+    "chooseCharacter": "../../components/chooseCharacter/chooseCharacter"
   }
 }

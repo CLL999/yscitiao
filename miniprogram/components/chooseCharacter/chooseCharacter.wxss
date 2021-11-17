@@ -1,0 +1,30 @@
+/* components/chooseCharacter/chooseCharacter.wxss */
+
+.element {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 50rpx;
+}
+
+.avatar {
+  width: 158rpx;
+  height: 158rpx;
+  /* float: right; */
+}
+
+.container {
+  height: 158rpx;
+  margin: 0 190rpx;
+  /* display: flex; */
+  /* position: relative; */
+  justify-content: center;
+}
+
+.CharacterPicker {
+  /* height: 158rpx; */
+  float: right;
+}
+
+.ElementPicker {
+  float: left;
+}

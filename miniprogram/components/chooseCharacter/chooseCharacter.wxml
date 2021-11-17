@@ -1,0 +1,10 @@
+<!--components/chooseCharacter/chooseCharacter.wxml-->
+
+<view class="container">
+  <picker class="ElementPicker" range="{{ElementList}}" value="{{elementIndex}}" bindchange="ElementPickerChange">
+    <image src="{{nowElementSrc}}" class="element"></image>
+  </picker>
+  <picker class="CharacterPicker" range="{{CharacterList}}" value="{{characterIndex}}" bindchange="CharacterPickerChange">
+    <image src="{{nowCharacterSrc}}" class="avatar"></image>
+  </picker>
+</view>
