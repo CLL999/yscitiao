@@ -17,9 +17,11 @@ Component({
   observers: {
     "**": function () {
       var DataInDetail = this.data;
+      var CharacterData = app.globalData.CharacterData;
+      let character = app.globalData.character;
       wx.setStorage({
-        key: "DataInDetail",
-        data: DataInDetail,
+        key: character,
+        data: {DataInDetail, CharacterData}
       });
       this.triggerEvent("input", {
         DataInDetail
@@ -82,27 +84,52 @@ Component({
         EnergyRecharge: e.detail.value
       })
     },
+
+    Refresh: function () {
+      let {
+        ATK,
+        CritDMG,
+        CritRate,
+        DEF,
+        ElementalMastery,
+        EnergyRecharge,
+        HP
+      } = app.globalData.DataInDetail;
+      this.setData({
+        ATK,
+        CritDMG,
+        CritRate,
+        DEF,
+        ElementalMastery,
+        EnergyRecharge,
+        HP
+      });
+    }
   },
 
   async attached() {
-    let {
-      ATK,
-      CritDMG,
-      CritRate,
-      DEF,
-      ElementalMastery,
-      EnergyRecharge,
-      HP
-    } = app.globalData.DataInDetail;
-    this.setData({
-      ATK,
-      CritDMG,
-      CritRate,
-      DEF,
-      ElementalMastery,
-      EnergyRecharge,
-      HP
-    });
+
+    // let {
+    //   ATK,
+    //   CritDMG,
+    //   CritRate,
+    //   DEF,
+    //   ElementalMastery,
+    //   EnergyRecharge,
+    //   HP
+    // } = app.globalData.DataInDetail;
+    // this.setData({
+    //   ATK,
+    //   CritDMG,
+    //   CritRate,
+    //   DEF,
+    //   ElementalMastery,
+    //   EnergyRecharge,
+    //   HP
+    // });
+
     // console.log("data!!",this.data);
+
+    this.Refresh();
   }
 })

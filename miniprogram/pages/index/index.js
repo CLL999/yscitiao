@@ -1,3 +1,4 @@
+var app = getApp();
 // pages/index/index.js
 Page({
 
@@ -16,6 +17,21 @@ Page({
     this.setData({
       CharacterData: e.detail.CharacterData
     })
+  },
+
+  ChangeCharacter: function (e) {
+    // this.setData({
+    //   DataInDetail: app.globalData.DataInDetail,
+    //   CharacterData: app.globalData.CharacterData
+    // })
+    console.log(e.detail);
+    this.setData({
+      DataInDetail: e.detail.DataInDetail,
+      CharacterData: e.detail.CharacterData
+    });
+    this.selectComponent("#CharacterData").Refresh();
+    this.selectComponent("#DataInDetail").Refresh();
+    this.onLoad();
   },
 
 

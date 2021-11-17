@@ -2,14 +2,15 @@
 
 <view class="head tips">选择角色</view>
 
-<chooseCharacter />
+<chooseCharacter bindChangeCharacter="ChangeCharacter" />
 
 <view class="head">点开人物→属性→详细信息，填入角色的生命值、攻击力和防御力白字，并选择圣遗物属性</view>
-<CharacterData bindinput="CharacterData" />
+
+<CharacterData bindinput="CharacterData" id="CharacterData"/>
 
 <view class="head">点开人物→圣遗物→圣遗物详情，填入对应的数值</view>
 
-<DataInDetail bindinput="inputDetail" />
+<DataInDetail bindinput="inputDetail" id="DataInDetail" />
 
 <Count HPDefault="{{CharacterData.HPDefault}}" ATKDefault="{{CharacterData.ATKDefault}}" DEFDefault="{{CharacterData.DEFDefault}}" Sands="{{CharacterData.Sands}}" Goblet="{{CharacterData.Goblet}}" Circlet="{{CharacterData.Circlet}}" HP="{{DataInDetail.HP}}" ATK="{{DataInDetail.ATK}}" DEF="{{DataInDetail.DEF}}" CritRate="{{DataInDetail.CritRate}}" CritDMG="{{DataInDetail.CritDMG}}" ElementalMastery="{{DataInDetail.ElementalMastery}}" EnergyRecharge="{{DataInDetail.EnergyRecharge}}" />
 

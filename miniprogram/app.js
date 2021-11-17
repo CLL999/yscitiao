@@ -12,26 +12,34 @@ App({
         // env: 'my-env-id',
         traceUser: true,
       });
-    }
+    };
     this.globalData = {
-      character: "klee"
-    },
+      character: "klee",
+    };
+
+    // wx.getStorage({
+    //   key: "CharacterData"
+    // }).then(
+    //   res1 => {
+    //     wx.getStorage({
+    //       key: "DataInDetail"
+    //     }).then(
+    //       res2 => {
+    //         this.globalData = {
+    //           CharacterData: res1.data,
+    //           DataInDetail: res2.data
+    //         };
+    //       }
+    //     );
+    //   }
+    // );
+    console.log("hi");
     wx.getStorage({
-      key: "CharacterData"
-    }).then(
-      res1 => {
-        wx.getStorage({
-          key: "DataInDetail"
-        }).then(
-          res2 => {
-            this.globalData = {
-              CharacterData: res1.data,
-              DataInDetail: res2.data
-            };
-          }
-        );
-      }
-    );
+      key: this.globalData.character
+    }).then(res => {
+      this.globalData.CharacterData = res.data.CharacterData;
+      this.globalData.DataInDetail = res.data.DataInDetail;
+    });
   },
 
 });
