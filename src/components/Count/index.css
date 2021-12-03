@@ -1,0 +1,96 @@
+.Tips {
+    font-size: large;
+    font-weight: bold;
+    color: red;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Container {
+    position: relative;
+    margin: 20px;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darksalmon;
+    margin: 6px;
+  }
+  
+  .checkbox {
+    margin: 60px;
+  }
+  
+  .labelCheckbox {
+    display: inline-block;
+  }
+  
+  .labelItem {
+    display: flex;
+  }
+  
+  .Final {
+    color: coral;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    margin: 0 100px;
+  }
+  
+  .kind {
+    position: flex;
+    justify-content: center;
+    align-content: center;
+    width: 300px;
+    min-height: 100px;
+    border: 1px gray solid;
+    margin: 0 auto;
+    z-index: 1;
+    background-color: white;
+  }
+  
+  .layeredCard {
+    position: relative;
+  }
+  
+  .layeredCard::before {
+    background: rgba(0, 0, 0, 0.3);
+    content: '';
+  
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(37.5px, 37.5px);
+  
+    min-height: 100%;
+    width: 300px;
+  
+    z-index: -1;
+  }
+  
+  
+  .copy {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 200px;
+    top: -5px;
+  }
+  
+  .copytips {
+    position: absolute;
+    font-size: smaller;
+    font-weight: lighter;
+    top: 23px;
+    right: 94px;
+  }
+  
+  .FinalExplain {
+    color: slateblue;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+    margin: 0 100px;
+  }

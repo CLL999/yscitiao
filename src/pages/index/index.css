@@ -1,0 +1,26 @@
+.tips {
+    display: flex;
+    justify-content: center;
+}
+  
+.head {
+    color: brown;
+    margin: 30px 74px;
+    font-size: small;
+    font-weight: 400;
+}
+  
+.foot {
+    margin-top: 10px;
+}
+  
+.backgroundImage {
+    position: absolute;
+    width: 100%;
+    z-index: -100;
+    opacity: 0.4;
+}
+  
+.imageContainer {
+    position: relative;
+}

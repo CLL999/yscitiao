@@ -1,0 +1,64 @@
+/* components/CharacterData/CharacterData.wxss */
+
+.tips {
+    display: flex;
+    justify-content: center;
+    font-weight: lighter;
+  }
+  
+  .picker {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+  }
+  
+  .containerInData {
+    border-radius: 30px;
+    margin: 20px 150px;
+  }
+  
+  .inputDetail {
+    padding: 0 10px;
+    border-bottom: 1px grey solid;
+    width: 166px;
+    margin: 0 auto;
+  }
+  
+  
+  .box {
+    width: 224px;
+    height: 224px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  
+  .rowItem {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .box11 {
+    background-color: #54D6CC;
+  }
+  
+  .box22 {
+    background-color: #6BE8C3;
+  }
+  
+  .box33 {
+    background-color: #91F8B4;
+  }
+  
+  .container1 {
+    background-color: #4EE7D4;
+  }
+  
+  .container2 {
+    background-color: #38D2E1;
+  }
+  
+  .container3 {
+    background-color: #54BADE;
+  }

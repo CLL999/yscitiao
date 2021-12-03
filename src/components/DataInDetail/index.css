@@ -1,0 +1,54 @@
+.box {
+    width: 224px;
+    height: 224px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rowItem {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .box1 {
+    background-color: #00F9FF;
+  }
+  
+  .box2 {
+    background-color: #56D1FF;
+  }
+  
+  .box3 {
+    background-color: #ABA3FA;
+  }
+  
+  .Box {
+    width: 168px;
+    height: 168px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .box4 {
+    background: #FFCA69;
+  }
+  
+  .box5 {
+    background: #FFA07F;
+  }
+  
+  .box6 {
+    background: #FF829D;
+  }
+  
+  .box7 {
+    background: #CE75B4;
+  }
+  
+  .inputDetail {
+    padding: 0 3px;
+    border-bottom: 1px grey solid;
+    width: 166px;
+    margin: 0 8px;
+  }
