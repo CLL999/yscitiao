@@ -1,7 +1,16 @@
 import { Input, Picker, Text, View } from '@tarojs/components'
+import { useDispatch } from 'react-redux'
+import { SET_HPDEFAULT,      
+         SET_ATKDEFAULT, 
+         SET_DEFDEFAULT,  
+         SET_SANDSINDEX,       
+         SET_GOBLETINDEX, 
+         SET_CIRCLETINDEX } from '../../constants'
 import "./index.css"
 
+
 export default function CharacterData(props) {
+    const dispatch = useDispatch()
 
     const SandsArray : Array<string> = ["攻击力%", "生命值%", "防御力%", "元素精通", "充能效率%"]
     const GobletArray : Array<string> = ["属性伤害%", "元素精通", "生命值%", "攻击力%", "防御力%"]
@@ -15,7 +24,14 @@ export default function CharacterData(props) {
                         className="inputDetail"
                         placeholder="生命值白字"
                         type="digit"
-                        onInput={props.handleHPDefaultInput}
+                        onInput={
+                        //    props.handleHPDefaultInput
+//                        (e) => 
+//                            {
+//                                dispatch({ type: SET_HPDEFAULT, payload: { HPDefault: parseFloat(e.detail.value)}})    
+                                props.handleHPDefaultInput
+//                            }
+                        }
                         maxlength={6}
                         value={props.HPDefault ? props.HPDefault : ''}
                     />
@@ -25,7 +41,14 @@ export default function CharacterData(props) {
                         className="inputDetail"
                         placeholder="攻击力白字"
                         type="digit"
-                        onInput={props.handleATKDefaultInput}
+                        onInput={
+                        //    props.handleATKDefaultInput
+                        (e) => 
+                            {
+                                dispatch({ type: SET_ATKDEFAULT, payload: {ATKDefault: parseFloat(e.detail.value)}})
+                                props.handleATKDefaultInput
+                            }
+                        }
                         maxlength={6}
                         value={props.ATKDefault ? props.ATKDefault : ''}
                     />
@@ -35,7 +58,14 @@ export default function CharacterData(props) {
                         className="inputDetail"
                         placeholder="防御力白字"
                         type="digit"
-                        onInput={props.handleDEFDefaultInput}
+                        onInput={
+                        //    props.handleDEFDefaultInput
+                        (e) => 
+                            {
+                                dispatch({ type: SET_DEFDEFAULT, payload: { DEFDefault: parseFloat(e.detail.value)}})
+                                props.handleDEFDefaultInput
+                            }
+                        }
                         maxlength={6}
                         value={props.DEFDefault ? props.DEFDefault : ''}
                     />
@@ -46,7 +76,14 @@ export default function CharacterData(props) {
                 <View className="containerInData container1">
                     <View className="tips">-时之沙属性-</View>
                     <Picker 
-                        onChange={props.SandsPickerChange}
+                        onChange={
+                        //    props.SandsPickerChange
+                        (e) => 
+                            {
+                                props.SandsPickerChange
+                                console.log(e)
+                            }
+                        }
                         value={props.SandsIndex > -1 ? props.SandsIndex : 0}
                         range={SandsArray}
                     >
