@@ -26,11 +26,7 @@ export default function CharacterData(props) {
                         type="digit"
                         onInput={
                         //    props.handleHPDefaultInput
-//                        (e) => 
-//                            {
-//                                dispatch({ type: SET_HPDEFAULT, payload: { HPDefault: parseFloat(e.detail.value)}})    
-                                props.handleHPDefaultInput
-//                            }
+                        (e) => dispatch({ type: SET_HPDEFAULT, payload: { HPDefault: parseFloat(e.detail.value)}})
                         }
                         maxlength={6}
                         value={props.HPDefault ? props.HPDefault : ''}
@@ -43,11 +39,7 @@ export default function CharacterData(props) {
                         type="digit"
                         onInput={
                         //    props.handleATKDefaultInput
-                        (e) => 
-                            {
-                                dispatch({ type: SET_ATKDEFAULT, payload: {ATKDefault: parseFloat(e.detail.value)}})
-                                props.handleATKDefaultInput
-                            }
+                        (e) => dispatch({ type: SET_ATKDEFAULT, payload: { ATKDefault: parseFloat(e.detail.value)}})
                         }
                         maxlength={6}
                         value={props.ATKDefault ? props.ATKDefault : ''}
@@ -60,11 +52,7 @@ export default function CharacterData(props) {
                         type="digit"
                         onInput={
                         //    props.handleDEFDefaultInput
-                        (e) => 
-                            {
-                                dispatch({ type: SET_DEFDEFAULT, payload: { DEFDefault: parseFloat(e.detail.value)}})
-                                props.handleDEFDefaultInput
-                            }
+                        (e) => dispatch({ type: SET_DEFDEFAULT, payload: { DEFDefault: parseFloat(e.detail.value)}})
                         }
                         maxlength={6}
                         value={props.DEFDefault ? props.DEFDefault : ''}
@@ -78,11 +66,7 @@ export default function CharacterData(props) {
                     <Picker 
                         onChange={
                         //    props.SandsPickerChange
-                        (e) => 
-                            {
-                                props.SandsPickerChange
-                                console.log(e)
-                            }
+                        (e) => dispatch({ type: SET_SANDSINDEX, payload: { SandsIndex: parseInt(e.detail.value)}})
                         }
                         value={props.SandsIndex > -1 ? props.SandsIndex : 0}
                         range={SandsArray}
@@ -99,7 +83,10 @@ export default function CharacterData(props) {
                 <View className="containerInData container2">
                     <View className="tips">-空之杯属性-</View>
                     <Picker 
-                        onChange={props.GobletPickerChange}
+                        onChange={
+                        //    props.GobletPickerChange
+                        (e) => dispatch({ type: SET_GOBLETINDEX, payload: { GobletIndex: parseInt(e.detail.value)}})
+                        }
                         value={props.GobletIndex > -1 ? props.GobletIndex : 0}
                         range={GobletArray}
                     >
@@ -115,7 +102,10 @@ export default function CharacterData(props) {
                 <View className="containerInData container3">
                     <View className="tips">-理之冠属性-</View>
                     <Picker 
-                        onChange={props.CircletPickerChange}
+                        onChange={
+                        //    props.CircletPickerChange
+                        (e) => dispatch({ type: SET_CIRCLETINDEX, payload: { CircletIndex: parseInt(e.detail.value)}})
+                        }
                         value={props.CircletIndex > -1 ? props.CircletIndex : 0}
                         range={CircletArray}
                     >
