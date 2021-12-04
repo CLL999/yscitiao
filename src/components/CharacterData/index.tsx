@@ -1,5 +1,7 @@
 import { Input, Picker, Text, View } from '@tarojs/components'
-import { useDispatch } from 'react-redux'
+import Taro from '@tarojs/taro'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { SET_HPDEFAULT,      
          SET_ATKDEFAULT, 
          SET_DEFDEFAULT,  
@@ -9,8 +11,55 @@ import { SET_HPDEFAULT,
 import "./index.css"
 
 
-export default function CharacterData(props) {
+export default function CharacterData() {
     const dispatch = useDispatch()
+
+    const [ characterData, setCharacterData ] = useState(useSelector(state => state.characterData))    
+    const [ isFirstTime, setFirstTime ] = useState(true)
+
+    const chooseCharacter = useSelector(state => state.chooseCharacter)
+    const nowCharacter = chooseCharacter.nowCharacter
+ 
+    useEffect(() => {
+        Taro.getStorage({
+            key: `${nowCharacter}'s characterData`
+        }).then(res => 
+                {
+                    setCharacterData(res.data)
+                    dispatch({ type: SET_HPDEFAULT, payload: { HPDefault: res.data.HPDefault}})
+                    dispatch({ type: SET_ATKDEFAULT, payload: { ATKDefault: res.data.ATKDefault}})
+                    dispatch({ type: SET_DEFDEFAULT, payload: { DEFDefault: res.data.DEFDefault}})
+                    dispatch({ type: SET_SANDSINDEX, payload: { SandsIndex: res.data.SandsIndex}})
+                    dispatch({ type: SET_GOBLETINDEX, payload: { GobletIndex: res.data.GobletIndex}})
+                    dispatch({ type: SET_CIRCLETINDEX, payload: { CircletIndex: res.data.CircletIndex}})
+
+                })
+          .catch(err => {   console.log("该角色无数据", err)
+                            setCharacterData({ HPDefault: 0,
+                                               ATKDefault: 0,
+                                               DEFDefault: 0,
+                                               SandsIndex: -1,
+                                               GobletIndex: -1,
+                                               CircletIndex: -1 }) 
+                            dispatch({ type: SET_HPDEFAULT, payload: { HPDefault: 0}})
+                            dispatch({ type: SET_ATKDEFAULT, payload: { ATKDefault: 0}})
+                            dispatch({ type: SET_DEFDEFAULT, payload: { DEFDefault: 0}})
+                            dispatch({ type: SET_SANDSINDEX, payload: { SandsIndex: -1}})
+                            dispatch({ type: SET_GOBLETINDEX, payload: { GobletIndex: -1}})
+                            dispatch({ type: SET_CIRCLETINDEX, payload: { CircletIndex: -1}})
+        })}, [nowCharacter])
+
+    useEffect(() => {
+        if (isFirstTime) {
+            setFirstTime(false)
+            return;
+        }
+        Taro.setStorage({
+            key: `${nowCharacter}'s characterData`,
+            data: characterData
+        })
+    }, [ characterData ])
+
 
     const SandsArray : Array<string> = ["攻击力%", "生命值%", "防御力%", "元素精通", "充能效率%"]
     const GobletArray : Array<string> = ["属性伤害%", "元素精通", "生命值%", "攻击力%", "防御力%"]
@@ -24,12 +73,13 @@ export default function CharacterData(props) {
                         className="inputDetail"
                         placeholder="生命值白字"
                         type="digit"
-                        onInput={
-                        //    props.handleHPDefaultInput
-                        (e) => dispatch({ type: SET_HPDEFAULT, payload: { HPDefault: parseFloat(e.detail.value)}})
-                        }
+                        onBlur={(e) => 
+                                {
+                                    setCharacterData({ ...characterData, HPDefault: parseFloat(e.detail.value)})
+                                    dispatch({ type: SET_HPDEFAULT, payload: { HPDefault: parseFloat(e.detail.value)}})}
+                                }
                         maxlength={6}
-                        value={props.HPDefault ? props.HPDefault : ''}
+                        value={characterData.HPDefault ? characterData.HPDefault : ''}
                     />
                 </View>
                 <View className="box box22">
@@ -37,12 +87,13 @@ export default function CharacterData(props) {
                         className="inputDetail"
                         placeholder="攻击力白字"
                         type="digit"
-                        onInput={
-                        //    props.handleATKDefaultInput
-                        (e) => dispatch({ type: SET_ATKDEFAULT, payload: { ATKDefault: parseFloat(e.detail.value)}})
-                        }
+                        onBlur={(e) => 
+                            {
+                                setCharacterData({ ...characterData, ATKDefault: parseFloat(e.detail.value)})
+                                dispatch({ type: SET_ATKDEFAULT, payload: { ATKDefault: parseFloat(e.detail.value)}})}
+                            }
                         maxlength={6}
-                        value={props.ATKDefault ? props.ATKDefault : ''}
+                        value={characterData.ATKDefault ? characterData.ATKDefault : ''}
                     />
                 </View>
                 <View className="box box33">
@@ -50,12 +101,13 @@ export default function CharacterData(props) {
                         className="inputDetail"
                         placeholder="防御力白字"
                         type="digit"
-                        onInput={
-                        //    props.handleDEFDefaultInput
-                        (e) => dispatch({ type: SET_DEFDEFAULT, payload: { DEFDefault: parseFloat(e.detail.value)}})
-                        }
+                        onBlur={(e) => 
+                            {
+                                setCharacterData({ ...characterData, DEFDefault: parseFloat(e.detail.value)})
+                                dispatch({ type: SET_DEFDEFAULT, payload: { DEFDefault: parseFloat(e.detail.value)}})}
+                            }
                         maxlength={6}
-                        value={props.DEFDefault ? props.DEFDefault : ''}
+                        value={characterData.DEFDefault ? characterData.DEFDefault : ''}
                     />
                 </View>
             </View>
@@ -65,16 +117,19 @@ export default function CharacterData(props) {
                     <View className="tips">-时之沙属性-</View>
                     <Picker 
                         onChange={
-                        //    props.SandsPickerChange
-                        (e) => dispatch({ type: SET_SANDSINDEX, payload: { SandsIndex: parseInt(e.detail.value)}})
+                        (e) => 
+                        {
+                            setCharacterData({ ...characterData, SandsIndex: parseInt(e.detail.value.toString())})
+                            dispatch({ type: SET_SANDSINDEX, payload: { SandsIndex: parseInt(e.detail.value.toString())}})
                         }
-                        value={props.SandsIndex > -1 ? props.SandsIndex : 0}
+                        }
+                        value={characterData.SandsIndex > -1 ? characterData.SandsIndex : 0}
                         range={SandsArray}
                     >
                         <View className="picker">
                             {
-                                props.SandsIndex > -1 ? 
-                                <Text>当前选择:{SandsArray[props.SandsIndex]}</Text> :
+                                characterData.SandsIndex > -1 ? 
+                                <Text>当前选择:{SandsArray[characterData.SandsIndex]}</Text> :
                                 <Text>点击选择</Text>
                             }
                         </View>
@@ -84,16 +139,19 @@ export default function CharacterData(props) {
                     <View className="tips">-空之杯属性-</View>
                     <Picker 
                         onChange={
-                        //    props.GobletPickerChange
-                        (e) => dispatch({ type: SET_GOBLETINDEX, payload: { GobletIndex: parseInt(e.detail.value)}})
+                        (e) => 
+                        {
+                            setCharacterData({ ...characterData, GobletIndex: parseInt(e.detail.value.toString())})
+                            dispatch({ type: SET_GOBLETINDEX, payload: { GobletIndex: parseInt(e.detail.value.toString())}})
                         }
-                        value={props.GobletIndex > -1 ? props.GobletIndex : 0}
+                        }
+                        value={characterData.GobletIndex > -1 ? characterData.GobletIndex : 0}
                         range={GobletArray}
                     >
                         <View className="picker">
                             {
-                                props.GobletIndex > -1 ? 
-                                <Text>当前选择:{GobletArray[props.GobletIndex]}</Text> :
+                                characterData.GobletIndex > -1 ? 
+                                <Text>当前选择:{ GobletArray[characterData.GobletIndex] }</Text> :
                                 <Text>点击选择</Text>
                             }
                         </View>
@@ -103,16 +161,19 @@ export default function CharacterData(props) {
                     <View className="tips">-理之冠属性-</View>
                     <Picker 
                         onChange={
-                        //    props.CircletPickerChange
-                        (e) => dispatch({ type: SET_CIRCLETINDEX, payload: { CircletIndex: parseInt(e.detail.value)}})
+                        (e) => 
+                        {
+                            setCharacterData({ ...characterData, CircletIndex: parseInt(e.detail.value.toString())})
+                            dispatch({ type: SET_CIRCLETINDEX, payload: { CircletIndex: parseInt(e.detail.value.toString())}})
                         }
-                        value={props.CircletIndex > -1 ? props.CircletIndex : 0}
+                        }
+                        value={characterData.CircletIndex > -1 ? characterData.CircletIndex : 0}
                         range={CircletArray}
                     >
                         <View className="picker">
                             {
-                                props.CircletIndex > -1 ? 
-                                <Text>当前选择:{CircletArray[props.CircletIndex]}</Text> :
+                                characterData.CircletIndex > -1 ? 
+                                <Text>当前选择:{ CircletArray[characterData.CircletIndex] }</Text> :
                                 <Text>点击选择</Text>
                             }
                         </View>

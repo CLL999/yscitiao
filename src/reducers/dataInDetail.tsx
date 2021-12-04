@@ -30,8 +30,8 @@ export default function dataInDetail(state = INITIAL_STATE, action) {
             const { DEF } = action.payload
             return { ...state, DEF }
         case SET_ELEMENTALMASTERY:
-            const { Elementalmastery } = action.payload
-            return { ...state, Elementalmastery}
+            const { ElementalMastery } = action.payload
+            return { ...state, ElementalMastery}
         case SET_CRITRATE:
             const { CritRate } = action.payload
             return { ...state, CritRate }

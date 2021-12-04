@@ -1,8 +1,12 @@
 import { Image, Picker, View } from '@tarojs/components'
+import { useDispatch } from 'react-redux'
+import { SET_NOWCHARACTER } from '../../constants'
 
 import "./index.css"
 
 export default function ChooseCharacter(props) {
+
+    const dispatch = useDispatch()
 
     const ElementList: Array<string> = ["火", "水", "风", "雷", "冰", "岩"]
     const elementList: Array<string> = ["pyro", "hydro", "anemo", "electro", "cryo", "geo"]
@@ -60,6 +64,7 @@ export default function ChooseCharacter(props) {
     }
 
     const nowCharacter: string = characterList[props.characterIndex]
+    dispatch({ type: SET_NOWCHARACTER, payload: { nowCharacter }})
     const nowCharacterSrc: string = require(`../../assets/icons/${nowElement}/${nowCharacter}.png`)
     props.signName(nowCharacter)
 

@@ -1,12 +1,22 @@
 import { Checkbox, CheckboxGroup, Image, Text, View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import copySrc from "../../assets/icons/copy.png"
 
 import "./index.css"
 
-export default function Count(props) {
+export default function Count() {
+
+    const data = useSelector(state => state)
+    console.log("Count捕捉到变化", data)
+    const { HPDefault, ATKDefault, DEFDefault,
+            SandsIndex, GobletIndex, CircletIndex, ...rest } = data.characterData  
+    console.log("characterData的rest", rest)
+    const { HP, ATK, DEF, ElementalMastery,
+            CritRate, CritDMG, EnergyRecharge, ...Rest } = data.dataInDetail
+    console.log("dataInDetail的rest", Rest)
 
     const [ count, setCount] = useState(0)
     const [ showItem, setShowItem] = useState('')
@@ -28,50 +38,50 @@ export default function Count(props) {
     let checkboxElementalMastery: boolean =  false
     let checkboxDEF: boolean =  false
 
-    let FinalHP:number = (props.HPDefault ? 
-                            parseFloat(((props.HP - 4780) 
-                            / (props.HPDefault - 0.466 
-                            * ((props.SandsIndex === 1 ? 1 : 0) 
-                            + (props.GobletIndex === 2 ? 1 : 0) 
-                            + (props.Circlet === 4 ? 1 : 0))) 
+    let FinalHP:number = (HPDefault ? 
+                            parseFloat(((HP - 4780) 
+                            / (HPDefault - 0.466 
+                            * ((SandsIndex === 1 ? 1 : 0) 
+                            + (GobletIndex === 2 ? 1 : 0) 
+                            + (CircletIndex === 4 ? 1 : 0))) 
                             / ForEachHP).toFixed(2)):0)
-    let FinalATK:number = (props.ATKDefault ?
-                            parseFloat(((((props.ATK - 311) 
-                            / (props.ATKDefault)) 
-                            - 0.466 * ((props.SandsIndex === 0 ? 1 : 0) 
-                            + (props.GobletIndex === 3 ? 1 : 0) 
-                            + (props.CircletIndex === 5 ? 1 : 0))) 
+    let FinalATK:number = (ATKDefault ?
+                            parseFloat(((((ATK - 311) 
+                            / (ATKDefault)) 
+                            - 0.466 * ((SandsIndex === 0 ? 1 : 0) 
+                            + (GobletIndex === 3 ? 1 : 0) 
+                            + (CircletIndex === 5 ? 1 : 0))) 
                             / ForEachATK).toFixed(2)):0)
-    let FinalDEF:number = (props.DEFDefault ?
-                            parseFloat((((props.DEF / props.DEFDefault) 
-                            - 0.583 * ((props.SandsIndex === 2 ? 1 : 0) 
-                            + (props.CircletIndex === 4 ? 1 : 0) 
-                            + (props.GobletIndex === 6 ? 1 : 0))) 
+    let FinalDEF:number = (DEFDefault ?
+                            parseFloat((((DEF / DEFDefault) 
+                            - 0.583 * ((SandsIndex === 2 ? 1 : 0) 
+                            + (CircletIndex === 4 ? 1 : 0) 
+                            + (GobletIndex === 6 ? 1 : 0))) 
                             / ForEachDEF).toFixed(2)):0)
     let FinalElementalMastery:number = 
-                            parseFloat(((props.ElementalMastery 
-                            - 187 * ((props.SandsIndex === 3 ? 1 : 0) 
-                            + (props.GobletIndex === 1 ? 1 : 0) 
-                            + (props.CircletIndex === 3 ? 1 : 0))) 
+                            parseFloat(((ElementalMastery 
+                            - 187 * ((SandsIndex === 3 ? 1 : 0) 
+                            + (GobletIndex === 1 ? 1 : 0) 
+                            + (CircletIndex === 3 ? 1 : 0))) 
                             / ForEachElementalMastery).toFixed(2))
     let FinalCritRate:number = 
-                            parseFloat(((props.CritRate 
-                            - 31.1 * (props.CircletIndex === 1 ? 1 : 0)) 
+                            parseFloat(((CritRate 
+                            - 31.1 * (CircletIndex === 1 ? 1 : 0)) 
                             / ForEachCritRate).toFixed(2))
     let FinalCritDMG:number = 
-                            parseFloat(((props.CritDMG 
-                            - 62.2 * (props.CircletIndex === 0 ? 1 : 0)) 
+                            parseFloat(((CritDMG 
+                            - 62.2 * (CircletIndex === 0 ? 1 : 0)) 
                             / ForEachCritDMG).toFixed(2))
     let FinalEnergyRecharge:number = 
-                            parseFloat(((props.EnergyRecharge 
-                            - 51.8 * (props.SandsIndex === 4 ? 1 : 0)) 
+                            parseFloat(((EnergyRecharge 
+                            - 51.8 * (SandsIndex === 4 ? 1 : 0)) 
                             / ForEachEnergyRecharge).toFixed(2))
 
     let SUM : number = 0
     let VisualItem: string = ''
 
     function copy() {
-        let cpy = `${props.nowCharacter},${VisualItem}=${SUM.toFixed(2)}`
+        let cpy = `${data.chooseCharacter.nowCharacter},${VisualItem}=${SUM.toFixed(2)}`
         Taro.setClipboardData({data: cpy})
     }
 
