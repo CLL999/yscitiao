@@ -1,10 +1,7 @@
 import Taro from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import { useEffect, useState } from 'react'
-import CharacterData from '../../components/CharacterData'
-import DataInDetail from '../../components/DataInDetail'
-import ChooseCharacter from "../../components/ChooseCharacter"
-import Count from '../../components/Count'
+import { CharacterData, ChooseCharacter, Count, DataInDetail } from '../../components'
 import './index.css'
 
 export default function Index() {
